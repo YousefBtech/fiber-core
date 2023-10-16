@@ -4,14 +4,9 @@
 //   let designSystem = try? JSONDecoder().decode(DesignSystem.self, from: jsonData)
 
 import Foundation
-import UIKit
-
-struct DesignProperties{
-    let colors: AllColors
-}
 
 struct AllColors {
-    let a0 = "#00dcff"
-    let a1 = "#ff00dc"
-    let a2 = "#2300ff"
+    static let a0 = "#00dcff"
+    static let a1 = "#ff00dc"
+    static let a2 = "#2300ff"
 }
