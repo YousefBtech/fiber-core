@@ -11,7 +11,7 @@ struct DesignProperties{
 }
 
 struct AllColors {
-    let a0 = UIColor(.red)
-    let a1 = UIColor(.gray)
-    let a2 = UIColor(.blue)
+    let a0 = "#00dcff"
+    let a1 = "#ff00dc"
+    let a2 = "#2300ff"
 }
