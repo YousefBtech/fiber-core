@@ -5,7 +5,7 @@
 
 import Foundation
 
-struct AllColors {
+public struct AllColors {
     static let a0 = "#00dcff"
     static let a1 = "#ff00dc"
     static let a2 = "#2300ff"
