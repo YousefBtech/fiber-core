@@ -1,0 +1,33 @@
+name: Copy quickType.swift to fiber-ios
+on:
+  push:
+    branches:
+      - main
+jobs:
+  copy_file:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout fiber-core
+        uses: actions/checkout@v3
+        with:
+          repository: YousefBtech/fiber-core
+          token: ${{ secrets.TOKEN }}
+      - name: Copy quickType.swift to fiber-ios
+        run: |
+          git config user.name 'YousefBtech'
+          git config user.email 'yousef.hanafi@btech.com'
+          git clone https://github.com/YousefBtech/fiber-iOS.git fiber-ios-temp
+          cd fiber-ios-temp/Sources/Fiber-iOS
+          ls
+          rm -rf DesignSystem.swift
+          cp quickType.swift fiber-ios-temp/Sources/Fiber-iOS
+          cd fiber-ios-temp
+          ls
+          git add .
+          git commit -m "Copy quickType.swift from fiber-core"
+          echo "hello"
+        env:
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
+          working-directory: ${{ github.workspace }}
+      - name: Cleanup
+        run: rm -rf fiber-ios-temp
