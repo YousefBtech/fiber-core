@@ -17,10 +17,11 @@ jobs:
           git config user.name 'YousefBtech'
           git config user.email 'yousef.hanafi@btech.com'
           git clone https://github.com/YousefBtech/fiber-iOS.git fiber-ios-temp
+          ls fiber-ios-temp/Sources/Fiber-iOS
           rm -rf fiber-ios-temp/Sources/Fiber-iOS/DesignSystem.swift
           cp quickType.swift fiber-ios-temp/Sources/Fiber-iOS
           cd fiber-ios-temp
-          ls
+          ls fiber-ios-temp/Sources/Fiber-iOS
           git add .
           git commit -m "Copy quickType.swift from fiber-core"
           echo "hello"
