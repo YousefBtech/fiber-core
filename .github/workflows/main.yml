@@ -24,6 +24,7 @@ jobs:
           git add .
           git commit -m "Copy quickType.swift from fiber-core"
           echo "hello"
+          git push
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
           working-directory: ${{ github.workspace }}
