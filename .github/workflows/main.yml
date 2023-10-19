@@ -21,7 +21,7 @@ jobs:
           rm -rf fiber-ios-temp/Sources/Fiber-iOS/DesignSystem.swift
           cp quickType.swift fiber-ios-temp/Sources/Fiber-iOS
           cd fiber-ios-temp
-          ls fiber-ios-temp/Sources/Fiber-iOS
+          ls Sources/Fiber-iOS
           git add .
           git commit -m "Copy quickType.swift from fiber-core"
           echo "hello"
