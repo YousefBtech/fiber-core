@@ -27,7 +27,7 @@ jobs:
           echo "hello"
           git push
         env:
-          GITHUB_TOKEN: ${{ secrets.TOKEN }}
+          ACCESS_TOKEN: ${{ secrets.TOKEN }}
           working-directory: ${{ github.workspace }}
       - name: Cleanup
         run: rm -rf fiber-ios-temp
