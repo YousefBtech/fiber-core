@@ -17,9 +17,7 @@ jobs:
           git config user.name 'YousefBtech'
           git config user.email 'yousef.hanafi@btech.com'
           git clone https://github.com/YousefBtech/fiber-iOS.git fiber-ios-temp
-          cd fiber-ios-temp/Sources/Fiber-iOS
-          ls
-          rm -rf DesignSystem.swift
+          rm -rf fiber-ios-temp/Sources/Fiber-iOS/DesignSystem.swift
           cp quickType.swift fiber-ios-temp/Sources/Fiber-iOS
           cd fiber-ios-temp
           ls
