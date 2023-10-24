@@ -17,14 +17,10 @@ jobs:
           git config user.name 'YousefBtech'
           git config user.email 'yousef.hanafi@btech.com'
           git clone -b deel https://user:$ACCESS_TOKEN@github.com/YousefBtech/fiber-iOS.git fiber-ios-temp
-          ls fiber-ios-temp/Sources/Fiber-iOS
           rm -rf fiber-ios-temp/Sources/Fiber-iOS/DesignSystem.swift
-          ls fiber-ios-temp/Sources/Fiber-iOS
           cp DesignSystem.swift fiber-ios-temp/Sources/Fiber-iOS
-          ls fiber-ios-temp/Sources/Fiber-iOS
           cd fiber-ios-temp
-          git add .
-          git branch --set-upstream-to origin/deel
+          git add fiber-ios-temp/Sources/Fiber-iOS/DesignSystem.swift
           git commit -m "Copy DesignSystem.swift from fiber-core"
           git push
       - name: Cleanup
