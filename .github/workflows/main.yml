@@ -22,6 +22,6 @@ jobs:
           cd fiber-ios-temp
           git add .
           git commit -m "Copy DesignSystem.swift from fiber-core"
-          git push
+          git push deel
       - name: Cleanup
         run: rm -rf fiber-ios-temp
