@@ -20,7 +20,8 @@ jobs:
           rm -rf fiber-ios-temp/Sources/Fiber-iOS/DesignSystem.swift
           cp DesignSystem.swift fiber-ios-temp/Sources/Fiber-iOS
           cd fiber-ios-temp
-          git add fiber-ios-temp/Sources/Fiber-iOS/DesignSystem.swift
+          git status
+          git add .
           git commit -m "Copy DesignSystem.swift from fiber-core"
           git push
       - name: Cleanup
