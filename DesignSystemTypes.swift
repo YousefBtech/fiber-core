@@ -15,6 +15,38 @@ class DesignSystem {
     let fontWeight: FontWeightValuesContainer
     let letterSpacing: LetterSpacingValuesContainer
     let lineHeight: LineHeightValuesContainer
+
+    init(
+        color:ColorValuesContainer,
+        borderWidth:BorderWidthValuesContainer,
+        borderRadius:BorderRadiusValuesContainer,
+        size:SizeValuesContainer,
+        space:SpaceValuesContainer,
+        opacity:OpacityValuesContainer,
+        typography:TypographyValuesContainer,
+        dimension:DimensionValuesContainer,
+        elevation:ElevationValuesContainer,
+        fontFamily:FontFamilyValuesContainer,
+        fontSize:FontSizeValuesContainer,
+        fontWeight:FontWeightValuesContainer,
+        letterSpacing:LetterSpacingValuesContainer,
+        lineHeight:LineHeightValuesContainer
+    ){
+        self.color = color
+        self.borderWidth = borderWidth
+        self.borderRadius = borderRadius
+        self.size = size
+        self.space = space
+        self.opacity = opacity
+        self.typography = typography
+        self.dimension = dimension
+        self.elevation = elevation
+        self.fontFamily = fontFamily
+        self.fontSize = fontSize
+        self.fontWeight = fontWeight
+        self.letterSpacing = letterSpacing
+        self.lineHeight = lineHeight
+    }
 }
 
 struct ContentValuesContainer {
