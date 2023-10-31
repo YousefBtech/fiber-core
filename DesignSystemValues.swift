@@ -1,6 +1,7 @@
 import SwiftUI
+import Fiber_Core
 
-let designSystem = DesignSystem(
+public let designSystem = DesignSystem(
     color: ColorValuesContainer(
         whiteAlpha: WhiteAlphaValuesContainer(
             whiteANegative9: SwiftUI.Color(hex: "ffffff14"),
@@ -38,7 +39,7 @@ let designSystem = DesignSystem(
             warmGray6: SwiftUI.Color(hex: "f3f3f1"),
             warmGray5: SwiftUI.Color(hex: "eaeae6"),
             warmGray4: SwiftUI.Color(hex: "e5e5e1"),
-            warmGray3: SwiftUI.Color(hex: "d9d9d3"),
+            warmGray3: SwiftUI.Color(hex: "e3e305"),
             warmGray2: SwiftUI.Color(hex: "a8a89f"),
             warmGray1: SwiftUI.Color(hex: "8b8b84"),
             warmGray0: SwiftUI.Color(hex: "5f5f58"),
@@ -53,14 +54,14 @@ let designSystem = DesignSystem(
             violet6: SwiftUI.Color(hex: "f3f0ff"),
             violet5: SwiftUI.Color(hex: "eeebff"),
             violet4: SwiftUI.Color(hex: "e3e0ff"),
-            violet3: SwiftUI.Color(hex: "dcd6ff"),
+            violet3: SwiftUI.Color(hex: "54917b"),
             violet2: SwiftUI.Color(hex: "aba2fb"),
             violet1: SwiftUI.Color(hex: "927ef1"),
             violet0: SwiftUI.Color(hex: "634eca"),
             negative4: SwiftUI.Color(hex: "201263"),
             negative3: SwiftUI.Color(hex: "39288a"),
-            negative2: SwiftUI.Color(hex: "4e38bc"),
-            negative1: SwiftUI.Color(hex: "573fcf")
+            negative2: SwiftUI.Color(hex: "161617"),
+            negative1: SwiftUI.Color(hex: "0e0406")
         ),
         transparent: TransparentValuesContainer(
             transparent: SwiftUI.Color(hex: "ffffff00")
@@ -76,14 +77,14 @@ let designSystem = DesignSystem(
             teal1: SwiftUI.Color(hex: "4f9eba"),
             teal0: SwiftUI.Color(hex: "077597"),
             negative4: SwiftUI.Color(hex: "012a37"),
-            negative3: SwiftUI.Color(hex: "0a495c"),
-            negative2: SwiftUI.Color(hex: "196076"),
+            negative3: SwiftUI.Color(hex: "7c4fc4"),
+            negative2: SwiftUI.Color(hex: "d1d2d2"),
             negative1: SwiftUI.Color(hex: "196c85")
         ),
         semantic: SemanticValuesContainer(
             warning: WarningValuesContainer(
                 semanticWarningNegative4: SwiftUI.Color(hex: "492909"),
-                semanticWarningNegative3: SwiftUI.Color(hex: "7a4510"),
+                semanticWarningNegative3: SwiftUI.Color(hex: "3f2828"),
                 semanticWarningNegative2: SwiftUI.Color(hex: "a05c1c"),
                 semanticWarningNegative1: SwiftUI.Color(hex: "b4610e"),
                 semanticWarning8: SwiftUI.Color(hex: "fffcfa"),
@@ -98,7 +99,7 @@ let designSystem = DesignSystem(
             ),
             success: SuccessValuesContainer1(
                 semanticSuccessNegative4: SwiftUI.Color(hex: "0a2e0b"),
-                semanticSuccessNegative3: SwiftUI.Color(hex: "135315"),
+                semanticSuccessNegative3: SwiftUI.Color(hex: "b3b7b0"),
                 semanticSuccessNegative2: SwiftUI.Color(hex: "246626"),
                 semanticSuccessNegative1: SwiftUI.Color(hex: "2f6f2f"),
                 semanticSuccess8: SwiftUI.Color(hex: "fbfefb"),
@@ -106,10 +107,10 @@ let designSystem = DesignSystem(
                 semanticSuccess6: SwiftUI.Color(hex: "e6f9e6"),
                 semanticSuccess5: SwiftUI.Color(hex: "dff6df"),
                 semanticSuccess4: SwiftUI.Color(hex: "cff2cf"),
-                semanticSuccess3: SwiftUI.Color(hex: "c6ecc6"),
-                semanticSuccess2: SwiftUI.Color(hex: "87c987"),
+                semanticSuccess3: SwiftUI.Color(hex: "00ff10"),
+                semanticSuccess2: SwiftUI.Color(hex: "fdff84"),
                 semanticSuccess1: SwiftUI.Color(hex: "55a555"),
-                semanticSuccess0: SwiftUI.Color(hex: "347434")
+                semanticSuccess0: SwiftUI.Color(hex: "20b027")
             ),
             neutralAlpha: NeutralAlphaValuesContainer(
                 semanticNeutralANegative4: SwiftUI.Color(hex: "09131aed"),
@@ -127,7 +128,7 @@ let designSystem = DesignSystem(
                 semanticNeutralA0: SwiftUI.Color(hex: "182639bd")
             ),
             neutral: NeutralValuesContainer2(
-                semanticNeutralNegative4: SwiftUI.Color(hex: "1b242c"),
+                semanticNeutralNegative4: SwiftUI.Color(hex: "1b212c"),
                 semanticNeutralNegative3: SwiftUI.Color(hex: "272e35"),
                 semanticNeutralNegative2: SwiftUI.Color(hex: "3a424a"),
                 semanticNeutralNegative1: SwiftUI.Color(hex: "4a545e"),
@@ -144,44 +145,44 @@ let designSystem = DesignSystem(
             info: InfoValuesContainer(
                 semanticInfoNegative4: SwiftUI.Color(hex: "041f5d"),
                 semanticInfoNegative3: SwiftUI.Color(hex: "113997"),
-                semanticInfoNegative2: SwiftUI.Color(hex: "1e4fc2"),
-                semanticInfoNegative1: SwiftUI.Color(hex: "2759ce"),
+                semanticInfoNegative2: SwiftUI.Color(hex: "658b6e"),
+                semanticInfoNegative1: SwiftUI.Color(hex: "9e6610"),
                 semanticInfo8: SwiftUI.Color(hex: "fafbff"),
                 semanticInfo7: SwiftUI.Color(hex: "f5f8ff"),
                 semanticInfo6: SwiftUI.Color(hex: "ebf0ff"),
                 semanticInfo5: SwiftUI.Color(hex: "e5eeff"),
                 semanticInfo4: SwiftUI.Color(hex: "d6e3ff"),
-                semanticInfo3: SwiftUI.Color(hex: "ccdcff"),
+                semanticInfo3: SwiftUI.Color(hex: "0085ff"),
                 semanticInfo2: SwiftUI.Color(hex: "8eb0fb"),
                 semanticInfo1: SwiftUI.Color(hex: "6691f4"),
                 semanticInfo0: SwiftUI.Color(hex: "3061d5")
             ),
             danger: DangerValuesContainer2(
                 semanticDangerNegative4: SwiftUI.Color(hex: "4a0d0d"),
-                semanticDangerNegative3: SwiftUI.Color(hex: "6f2020"),
-                semanticDangerNegative2: SwiftUI.Color(hex: "952d2d"),
+                semanticDangerNegative3: SwiftUI.Color(hex: "30723a"),
+                semanticDangerNegative2: SwiftUI.Color(hex: "63c7c3"),
                 semanticDangerNegative1: SwiftUI.Color(hex: "a13636"),
                 semanticDanger8: SwiftUI.Color(hex: "fffafa"),
                 semanticDanger7: SwiftUI.Color(hex: "fef5f5"),
                 semanticDanger6: SwiftUI.Color(hex: "ffebeb"),
                 semanticDanger5: SwiftUI.Color(hex: "fee7e7"),
-                semanticDanger4: SwiftUI.Color(hex: "fcd9d9"),
-                semanticDanger3: SwiftUI.Color(hex: "fccfcf"),
-                semanticDanger2: SwiftUI.Color(hex: "f49090"),
-                semanticDanger1: SwiftUI.Color(hex: "f26363"),
-                semanticDanger0: SwiftUI.Color(hex: "c53434")
+                semanticDanger4: SwiftUI.Color(hex: "d15a5a"),
+                semanticDanger3: SwiftUI.Color(hex: "76d91c"),
+                semanticDanger2: SwiftUI.Color(hex: "494b75"),
+                semanticDanger1: SwiftUI.Color(hex: "285aa5"),
+                semanticDanger0: SwiftUI.Color(hex: "9e6610")
             ),
             brand: BrandValuesContainer(
-                semanticBrandNegative4: SwiftUI.Color(hex: "952d2d"),
+                semanticBrandNegative4: SwiftUI.Color(hex: "3061d5"),
                 semanticBrandNegative3: SwiftUI.Color(hex: "113997"),
-                semanticBrandNegative2: SwiftUI.Color(hex: "1e4fc2"),
-                semanticBrandNegative1: SwiftUI.Color(hex: "2759ce"),
+                semanticBrandNegative2: SwiftUI.Color(hex: "658b6e"),
+                semanticBrandNegative1: SwiftUI.Color(hex: "ff9375"),
                 semanticBrand8: SwiftUI.Color(hex: "fafbff"),
                 semanticBrand7: SwiftUI.Color(hex: "f5f8ff"),
                 semanticBrand6: SwiftUI.Color(hex: "ebf0ff"),
                 semanticBrand5: SwiftUI.Color(hex: "e5eeff"),
                 semanticBrand4: SwiftUI.Color(hex: "d6e3ff"),
-                semanticBrand3: SwiftUI.Color(hex: "ccdcff"),
+                semanticBrand3: SwiftUI.Color(hex: "0085ff"),
                 semanticBrand2: SwiftUI.Color(hex: "8eb0fb"),
                 semanticBrand1: SwiftUI.Color(hex: "6691f4"),
                 semanticBrand0: SwiftUI.Color(hex: "3061d5")
@@ -192,14 +193,14 @@ let designSystem = DesignSystem(
             red7: SwiftUI.Color(hex: "fef5f5"),
             red6: SwiftUI.Color(hex: "ffebeb"),
             red5: SwiftUI.Color(hex: "fee7e7"),
-            red4: SwiftUI.Color(hex: "fcd9d9"),
-            red3: SwiftUI.Color(hex: "fccfcf"),
-            red2: SwiftUI.Color(hex: "f49090"),
-            red1: SwiftUI.Color(hex: "f26363"),
-            red0: SwiftUI.Color(hex: "c53434"),
+            red4: SwiftUI.Color(hex: "d15a5a"),
+            red3: SwiftUI.Color(hex: "76d91c"),
+            red2: SwiftUI.Color(hex: "494b75"),
+            red1: SwiftUI.Color(hex: "285aa5"),
+            red0: SwiftUI.Color(hex: "9e6610"),
             negative4: SwiftUI.Color(hex: "4a0d0d"),
-            negative3: SwiftUI.Color(hex: "6f2020"),
-            negative2: SwiftUI.Color(hex: "952d2d"),
+            negative3: SwiftUI.Color(hex: "30723a"),
+            negative2: SwiftUI.Color(hex: "63c7c3"),
             negative1: SwiftUI.Color(hex: "a13636")
         ),
         purple: PurpleValuesContainer1(
@@ -208,9 +209,9 @@ let designSystem = DesignSystem(
             purple6: SwiftUI.Color(hex: "faedfd"),
             purple5: SwiftUI.Color(hex: "f8e2fd"),
             purple4: SwiftUI.Color(hex: "f5d5fb"),
-            purple3: SwiftUI.Color(hex: "f4caf7"),
+            purple3: SwiftUI.Color(hex: "c04c0d"),
             purple2: SwiftUI.Color(hex: "d98eec"),
-            purple1: SwiftUI.Color(hex: "c466db"),
+            purple1: SwiftUI.Color(hex: "4e82ee"),
             purple0: SwiftUI.Color(hex: "9939ac"),
             negative4: SwiftUI.Color(hex: "410b2f"),
             negative3: SwiftUI.Color(hex: "5b1e67"),
@@ -228,7 +229,7 @@ let designSystem = DesignSystem(
             orange1: SwiftUI.Color(hex: "f6a351"),
             orange0: SwiftUI.Color(hex: "f59638"),
             negative4: SwiftUI.Color(hex: "492909"),
-            negative3: SwiftUI.Color(hex: "7a4510"),
+            negative3: SwiftUI.Color(hex: "3f2828"),
             negative2: SwiftUI.Color(hex: "a05c1c"),
             negative1: SwiftUI.Color(hex: "b4610e")
         ),
@@ -248,7 +249,7 @@ let designSystem = DesignSystem(
             violet: VioletValuesContainer(
                 nonSemanticVioletContentSecondary: SwiftUI.Color(hex: "634eca"),
                 nonSemanticVioletContentPrimary: SwiftUI.Color(hex: "39288a"),
-                nonSemanticVioletBorderSubtle: SwiftUI.Color(hex: "dcd6ff"),
+                nonSemanticVioletBorderSubtle: SwiftUI.Color(hex: "54917b"),
                 nonSemanticVioletBorderStrong: SwiftUI.Color(hex: "634eca"),
                 nonSemanticVioletBorderDefault: SwiftUI.Color(hex: "eeebff"),
                 nonSemanticVioletBackgroundSurface: SwiftUI.Color(hex: "fbfaff"),
@@ -259,7 +260,7 @@ let designSystem = DesignSystem(
             ),
             teal: TealValuesContainer(
                 nonSemanticTealContentSecondary: SwiftUI.Color(hex: "077597"),
-                nonSemanticTealContentPrimary: SwiftUI.Color(hex: "0a495c"),
+                nonSemanticTealContentPrimary: SwiftUI.Color(hex: "7c4fc4"),
                 nonSemanticTealBorderSubtle: SwiftUI.Color(hex: "b8e8f5"),
                 nonSemanticTealBorderStrong: SwiftUI.Color(hex: "077597"),
                 nonSemanticTealBorderDefault: SwiftUI.Color(hex: "e0f3fa"),
@@ -270,21 +271,21 @@ let designSystem = DesignSystem(
                 nonSemanticTealBackgroundMuted: SwiftUI.Color(hex: "c5ecf7")
             ),
             red: RedValuesContainer(
-                nonSemanticRedContentSecondary: SwiftUI.Color(hex: "c53434"),
-                nonSemanticRedContentPrimary: SwiftUI.Color(hex: "6f2020"),
-                nonSemanticRedBorderSubtle: SwiftUI.Color(hex: "fccfcf"),
-                nonSemanticRedBorderStrong: SwiftUI.Color(hex: "c53434"),
+                nonSemanticRedContentSecondary: SwiftUI.Color(hex: "9e6610"),
+                nonSemanticRedContentPrimary: SwiftUI.Color(hex: "30723a"),
+                nonSemanticRedBorderSubtle: SwiftUI.Color(hex: "76d91c"),
+                nonSemanticRedBorderStrong: SwiftUI.Color(hex: "9e6610"),
                 nonSemanticRedBorderDefault: SwiftUI.Color(hex: "fee7e7"),
                 nonSemanticRedBackgroundSurface: SwiftUI.Color(hex: "fffafa"),
                 nonSemanticRedBackgroundSubtle: SwiftUI.Color(hex: "fef5f5"),
-                nonSemanticRedBackgroundStrong: SwiftUI.Color(hex: "c53434"),
+                nonSemanticRedBackgroundStrong: SwiftUI.Color(hex: "9e6610"),
                 nonSemanticRedBackgroundOnSubtle: SwiftUI.Color(hex: "fee7e7"),
-                nonSemanticRedBackgroundMuted: SwiftUI.Color(hex: "fcd9d9")
+                nonSemanticRedBackgroundMuted: SwiftUI.Color(hex: "d15a5a")
             ),
             purple: PurpleValuesContainer(
                 nonSemanticPurpleContentSecondary: SwiftUI.Color(hex: "9939ac"),
                 nonSemanticPurpleContentPrimary: SwiftUI.Color(hex: "5b1e67"),
-                nonSemanticPurpleBorderSubtle: SwiftUI.Color(hex: "f4caf7"),
+                nonSemanticPurpleBorderSubtle: SwiftUI.Color(hex: "c04c0d"),
                 nonSemanticPurpleBorderStrong: SwiftUI.Color(hex: "9939ac"),
                 nonSemanticPurpleBorderDefault: SwiftUI.Color(hex: "f8e2fd"),
                 nonSemanticPurpleBackgroundSurface: SwiftUI.Color(hex: "fefaff"),
@@ -295,7 +296,7 @@ let designSystem = DesignSystem(
             ),
             orange: OrangeValuesContainer(
                 nonSemanticOrangeContentSecondary: SwiftUI.Color(hex: "f59638"),
-                nonSemanticOrangeContentPrimary: SwiftUI.Color(hex: "7a4510"),
+                nonSemanticOrangeContentPrimary: SwiftUI.Color(hex: "3f2828"),
                 nonSemanticOrangeBorderSubtle: SwiftUI.Color(hex: "ffd4a8"),
                 nonSemanticOrangeBorderStrong: SwiftUI.Color(hex: "f59638"),
                 nonSemanticOrangeBorderDefault: SwiftUI.Color(hex: "ffe8d1"),
@@ -306,26 +307,26 @@ let designSystem = DesignSystem(
                 nonSemanticOrangeBackgroundMuted: SwiftUI.Color(hex: "fcdec0")
             ),
             magenta: MagentaValuesContainer(
-                nonSemanticMagentaContentSecondary: SwiftUI.Color(hex: "b12f86"),
+                nonSemanticMagentaContentSecondary: SwiftUI.Color(hex: "91ae7a"),
                 nonSemanticMagentaContentPrimary: SwiftUI.Color(hex: "671e4d"),
                 nonSemanticMagentaBorderSubtle: SwiftUI.Color(hex: "f7cae8"),
-                nonSemanticMagentaBorderStrong: SwiftUI.Color(hex: "b12f86"),
+                nonSemanticMagentaBorderStrong: SwiftUI.Color(hex: "91ae7a"),
                 nonSemanticMagentaBorderDefault: SwiftUI.Color(hex: "fde2f4"),
                 nonSemanticMagentaBackgroundSurface: SwiftUI.Color(hex: "fffafd"),
                 nonSemanticMagentaBackgroundSubtle: SwiftUI.Color(hex: "fef6fb"),
-                nonSemanticMagentaBackgroundStrong: SwiftUI.Color(hex: "b12f86"),
+                nonSemanticMagentaBackgroundStrong: SwiftUI.Color(hex: "91ae7a"),
                 nonSemanticMagentaBackgroundOnSubtle: SwiftUI.Color(hex: "fde2f4"),
                 nonSemanticMagentaBackgroundMuted: SwiftUI.Color(hex: "fbd5ee")
             ),
             green: GreenValuesContainer(
-                nonSemanticGreenContentSecondary: SwiftUI.Color(hex: "347434"),
-                nonSemanticGreenContentPrimary: SwiftUI.Color(hex: "135315"),
-                nonSemanticGreenBorderSubtle: SwiftUI.Color(hex: "c6ecc6"),
-                nonSemanticGreenBorderStrong: SwiftUI.Color(hex: "347434"),
+                nonSemanticGreenContentSecondary: SwiftUI.Color(hex: "20b027"),
+                nonSemanticGreenContentPrimary: SwiftUI.Color(hex: "b3b7b0"),
+                nonSemanticGreenBorderSubtle: SwiftUI.Color(hex: "00ff10"),
+                nonSemanticGreenBorderStrong: SwiftUI.Color(hex: "20b027"),
                 nonSemanticGreenBorderDefault: SwiftUI.Color(hex: "dff6df"),
                 nonSemanticGreenBackgroundSurface: SwiftUI.Color(hex: "fbfefb"),
                 nonSemanticGreenBackgroundSubtle: SwiftUI.Color(hex: "f4fbf4"),
-                nonSemanticGreenBackgroundStrong: SwiftUI.Color(hex: "347434"),
+                nonSemanticGreenBackgroundStrong: SwiftUI.Color(hex: "20b027"),
                 nonSemanticGreenBackgroundOnSubtle: SwiftUI.Color(hex: "dff6df"),
                 nonSemanticGreenBackgroundMuted: SwiftUI.Color(hex: "cff2cf")
             ),
@@ -343,7 +344,7 @@ let designSystem = DesignSystem(
             ),
             cyan: CyanValuesContainer(
                 nonSemanticCyanContentSecondary: SwiftUI.Color(hex: "0870ba"),
-                nonSemanticCyanContentPrimary: SwiftUI.Color(hex: "0c456e"),
+                nonSemanticCyanContentPrimary: SwiftUI.Color(hex: "0c636e"),
                 nonSemanticCyanBorderSubtle: SwiftUI.Color(hex: "c2e2ff"),
                 nonSemanticCyanBorderStrong: SwiftUI.Color(hex: "0870ba"),
                 nonSemanticCyanBorderDefault: SwiftUI.Color(hex: "e0f1ff"),
@@ -356,7 +357,7 @@ let designSystem = DesignSystem(
             blue: BlueValuesContainer(
                 nonSemanticBlueContentSecondary: SwiftUI.Color(hex: "3061d5"),
                 nonSemanticBlueContentPrimary: SwiftUI.Color(hex: "113997"),
-                nonSemanticBlueBorderSubtle: SwiftUI.Color(hex: "ccdcff"),
+                nonSemanticBlueBorderSubtle: SwiftUI.Color(hex: "0085ff"),
                 nonSemanticBlueBorderStrong: SwiftUI.Color(hex: "3061d5"),
                 nonSemanticBlueBorderDefault: SwiftUI.Color(hex: "e5eeff"),
                 nonSemanticBlueBackgroundSurface: SwiftUI.Color(hex: "fafbff"),
@@ -411,7 +412,7 @@ let designSystem = DesignSystem(
         magenta: MagentaValuesContainer1(
             negative4: SwiftUI.Color(hex: "410b2f"),
             negative3: SwiftUI.Color(hex: "671e4d"),
-            negative2: SwiftUI.Color(hex: "892969"),
+            negative2: SwiftUI.Color(hex: "f70aa8"),
             negative1: SwiftUI.Color(hex: "953274"),
             magenta8: SwiftUI.Color(hex: "fffafd"),
             magenta7: SwiftUI.Color(hex: "fef6fb"),
@@ -420,8 +421,8 @@ let designSystem = DesignSystem(
             magenta4: SwiftUI.Color(hex: "fbd5ee"),
             magenta3: SwiftUI.Color(hex: "f7cae8"),
             magenta2: SwiftUI.Color(hex: "ec89cb"),
-            magenta1: SwiftUI.Color(hex: "de5eb3"),
-            magenta0: SwiftUI.Color(hex: "b12f86")
+            magenta1: SwiftUI.Color(hex: "5d9ede"),
+            magenta0: SwiftUI.Color(hex: "91ae7a")
         ),
         interaction: InteractionValuesContainer(
             neutral: NeutralValuesContainer1(
@@ -467,21 +468,21 @@ let designSystem = DesignSystem(
                 interactionDefaultSubtleSelected: SwiftUI.Color(hex: "e5eeff"),
                 interactionDefaultSubtleNormal: SwiftUI.Color(hex: "ebf0ff"),
                 interactionDefaultSubtleHover: SwiftUI.Color(hex: "e5eeff"),
-                interactionDefaultSubtleActive: SwiftUI.Color(hex: "ccdcff"),
-                interactionDefaultSelected: SwiftUI.Color(hex: "1e4fc2"),
+                interactionDefaultSubtleActive: SwiftUI.Color(hex: "0085ff"),
+                interactionDefaultSelected: SwiftUI.Color(hex: "658b6e"),
                 interactionDefaultNormal: SwiftUI.Color(hex: "3061d5"),
-                interactionDefaultHover: SwiftUI.Color(hex: "1e4fc2"),
+                interactionDefaultHover: SwiftUI.Color(hex: "658b6e"),
                 interactionDefaultActive: SwiftUI.Color(hex: "113997")
             ),
             danger: DangerValuesContainer1(
                 interactionDangerSubtleSelected: SwiftUI.Color(hex: "fee7e7"),
                 interactionDangerSubtleNormal: SwiftUI.Color(hex: "ffebeb"),
                 interactionDangerSubtleHover: SwiftUI.Color(hex: "fee7e7"),
-                interactionDangerSubtleActive: SwiftUI.Color(hex: "fccfcf"),
-                interactionDangerSelected: SwiftUI.Color(hex: "952d2d"),
-                interactionDangerNormal: SwiftUI.Color(hex: "c53434"),
-                interactionDangerHover: SwiftUI.Color(hex: "952d2d"),
-                interactionDangerActive: SwiftUI.Color(hex: "6f2020")
+                interactionDangerSubtleActive: SwiftUI.Color(hex: "76d91c"),
+                interactionDangerSelected: SwiftUI.Color(hex: "63c7c3"),
+                interactionDangerNormal: SwiftUI.Color(hex: "9e6610"),
+                interactionDangerHover: SwiftUI.Color(hex: "63c7c3"),
+                interactionDangerActive: SwiftUI.Color(hex: "30723a")
             ),
             border: BorderValuesContainer1(
                 interactionBorderSelected: SwiftUI.Color(hex: "3061d5"),
@@ -491,8 +492,8 @@ let designSystem = DesignSystem(
                 interactionBorderNeutralHover: SwiftUI.Color(hex: "9ea8b3"),
                 interactionBorderNeutralActive: SwiftUI.Color(hex: "7e8c9a"),
                 interactionBorderHover: SwiftUI.Color(hex: "6691f4"),
-                interactionBorderDanger: SwiftUI.Color(hex: "f26363"),
-                interactionBorderActive: SwiftUI.Color(hex: "2759ce")
+                interactionBorderDanger: SwiftUI.Color(hex: "285aa5"),
+                interactionBorderActive: SwiftUI.Color(hex: "ff9375")
             ),
             background: BackgroundValuesContainer1(
                 interactionBackgroundSidepanel: SwiftUI.Color(hex: "ffffff"),
@@ -505,7 +506,7 @@ let designSystem = DesignSystem(
         ),
         green: GreenValuesContainer1(
             negative4: SwiftUI.Color(hex: "0a2e0b"),
-            negative3: SwiftUI.Color(hex: "135315"),
+            negative3: SwiftUI.Color(hex: "b3b7b0"),
             negative2: SwiftUI.Color(hex: "246626"),
             negative1: SwiftUI.Color(hex: "2f6f2f"),
             green8: SwiftUI.Color(hex: "fbfefb"),
@@ -513,16 +514,16 @@ let designSystem = DesignSystem(
             green6: SwiftUI.Color(hex: "e6f9e6"),
             green5: SwiftUI.Color(hex: "dff6df"),
             green4: SwiftUI.Color(hex: "cff2cf"),
-            green3: SwiftUI.Color(hex: "c6ecc6"),
-            green2: SwiftUI.Color(hex: "87c987"),
+            green3: SwiftUI.Color(hex: "00ff10"),
+            green2: SwiftUI.Color(hex: "fdff84"),
             green1: SwiftUI.Color(hex: "55a555"),
-            green0: SwiftUI.Color(hex: "347434")
+            green0: SwiftUI.Color(hex: "20b027")
         ),
         cyan: CyanValuesContainer1(
             negative4: SwiftUI.Color(hex: "002742"),
-            negative3: SwiftUI.Color(hex: "0c456e"),
+            negative3: SwiftUI.Color(hex: "0c636e"),
             negative2: SwiftUI.Color(hex: "165c8d"),
-            negative1: SwiftUI.Color(hex: "1b679d"),
+            negative1: SwiftUI.Color(hex: "60a0cf"),
             cyan8: SwiftUI.Color(hex: "fafdff"),
             cyan7: SwiftUI.Color(hex: "f0f9ff"),
             cyan6: SwiftUI.Color(hex: "ebf5ff"),
@@ -549,7 +550,7 @@ let designSystem = DesignSystem(
             coolGrayA0: SwiftUI.Color(hex: "182639bd")
         ),
         coolGray: CoolGrayValuesContainer(
-            negative4: SwiftUI.Color(hex: "1b242c"),
+            negative4: SwiftUI.Color(hex: "1b212c"),
             negative3: SwiftUI.Color(hex: "272e35"),
             negative2: SwiftUI.Color(hex: "3a424a"),
             negative1: SwiftUI.Color(hex: "4a545e"),
@@ -565,11 +566,11 @@ let designSystem = DesignSystem(
         ),
         content: ContentValuesContainer(
             warningSecondary: SwiftUI.Color(hex: "f59638"),
-            warningPrimary: SwiftUI.Color(hex: "7a4510"),
+            warningPrimary: SwiftUI.Color(hex: "3f2828"),
             tertiaryInverse: SwiftUI.Color(hex: "ffffff66"),
             tertiary: SwiftUI.Color(hex: "7e8c9a"),
-            successSecondary: SwiftUI.Color(hex: "347434"),
-            successPrimary: SwiftUI.Color(hex: "135315"),
+            successSecondary: SwiftUI.Color(hex: "20b027"),
+            successPrimary: SwiftUI.Color(hex: "b3b7b0"),
             secondaryInverse: SwiftUI.Color(hex: "ffffffa3"),
             secondary: SwiftUI.Color(hex: "555f6d"),
             primaryInverse: SwiftUI.Color(hex: "ffffff"),
@@ -578,37 +579,37 @@ let designSystem = DesignSystem(
             infoPrimary: SwiftUI.Color(hex: "113997"),
             disabledInverse: SwiftUI.Color(hex: "ffffff3d"),
             disabled: SwiftUI.Color(hex: "9ea8b3"),
-            dangerSecondary: SwiftUI.Color(hex: "c53434"),
-            dangerPrimary: SwiftUI.Color(hex: "6f2020"),
+            dangerSecondary: SwiftUI.Color(hex: "9e6610"),
+            dangerPrimary: SwiftUI.Color(hex: "30723a"),
             brandSecondary: SwiftUI.Color(hex: "3061d5"),
             brandPrimary: SwiftUI.Color(hex: "113997")
         ),
         border: BorderValuesContainer(
             warningSubtle: SwiftUI.Color(hex: "ffd4a8"),
             warningStrong: SwiftUI.Color(hex: "f59638"),
-            successSubtle: SwiftUI.Color(hex: "c6ecc6"),
-            successStrong: SwiftUI.Color(hex: "347434"),
+            successSubtle: SwiftUI.Color(hex: "00ff10"),
+            successStrong: SwiftUI.Color(hex: "20b027"),
             neutralSubtle: SwiftUI.Color(hex: "cfd6dd"),
             neutralStrong: SwiftUI.Color(hex: "555f6d"),
             inverse: SwiftUI.Color(hex: "ffffff"),
-            infoSubtle: SwiftUI.Color(hex: "ccdcff"),
+            infoSubtle: SwiftUI.Color(hex: "0085ff"),
             infoStrong: SwiftUI.Color(hex: "3061d5"),
             defaultA: SwiftUI.Color(hex: "10284717"),
             default: SwiftUI.Color(hex: "eaedf0"),
-            dangerSubtle: SwiftUI.Color(hex: "fccfcf"),
-            dangerStrong: SwiftUI.Color(hex: "c53434")
+            dangerSubtle: SwiftUI.Color(hex: "76d91c"),
+            dangerStrong: SwiftUI.Color(hex: "9e6610")
         ),
         blue: BlueValuesContainer1(
             negative4: SwiftUI.Color(hex: "041f5d"),
             negative3: SwiftUI.Color(hex: "113997"),
-            negative2: SwiftUI.Color(hex: "1e4fc2"),
-            negative1: SwiftUI.Color(hex: "2759ce"),
+            negative2: SwiftUI.Color(hex: "658b6e"),
+            negative1: SwiftUI.Color(hex: "ff9375"),
             blue8: SwiftUI.Color(hex: "fafbff"),
             blue7: SwiftUI.Color(hex: "f5f8ff"),
             blue6: SwiftUI.Color(hex: "ebf0ff"),
             blue5: SwiftUI.Color(hex: "e5eeff"),
             blue4: SwiftUI.Color(hex: "d6e3ff"),
-            blue3: SwiftUI.Color(hex: "ccdcff"),
+            blue3: SwiftUI.Color(hex: "0085ff"),
             blue2: SwiftUI.Color(hex: "8eb0fb"),
             blue1: SwiftUI.Color(hex: "6691f4"),
             blue0: SwiftUI.Color(hex: "3061d5")
@@ -621,7 +622,7 @@ let designSystem = DesignSystem(
             warningMuted: SwiftUI.Color(hex: "fcdec0"),
             successSurface: SwiftUI.Color(hex: "fbfefb"),
             successSubtle: SwiftUI.Color(hex: "f4fbf4"),
-            successStrong: SwiftUI.Color(hex: "347434"),
+            successStrong: SwiftUI.Color(hex: "20b027"),
             successOnSubtle: SwiftUI.Color(hex: "dff6df"),
             successMuted: SwiftUI.Color(hex: "cff2cf"),
             neutralSurface: SwiftUI.Color(hex: "fcfcfd"),
@@ -638,9 +639,9 @@ let designSystem = DesignSystem(
             default: SwiftUI.Color(hex: "ffffff"),
             dangerSurface: SwiftUI.Color(hex: "fffafa"),
             dangerSubtle: SwiftUI.Color(hex: "fef5f5"),
-            dangerStrong: SwiftUI.Color(hex: "c53434"),
+            dangerStrong: SwiftUI.Color(hex: "9e6610"),
             dangerOnSubtle: SwiftUI.Color(hex: "fee7e7"),
-            dangerMuted: SwiftUI.Color(hex: "fcd9d9"),
+            dangerMuted: SwiftUI.Color(hex: "d15a5a"),
             brandSurface: SwiftUI.Color(hex: "fafbff"),
             brandSubtle: SwiftUI.Color(hex: "f5f8ff"),
             brandStrong: SwiftUI.Color(hex: "3061d5"),
@@ -667,11 +668,11 @@ let designSystem = DesignSystem(
                 actionSuccessSubtleSelected: SwiftUI.Color(hex: "dff6df"),
                 actionSuccessSubtleNormal: SwiftUI.Color(hex: "e6f9e6"),
                 actionSuccessSubtleHover: SwiftUI.Color(hex: "dff6df"),
-                actionSuccessSubtleActive: SwiftUI.Color(hex: "c6ecc6"),
+                actionSuccessSubtleActive: SwiftUI.Color(hex: "00ff10"),
                 actionSuccessSelected: SwiftUI.Color(hex: "246626"),
-                actionSuccessNormal: SwiftUI.Color(hex: "347434"),
+                actionSuccessNormal: SwiftUI.Color(hex: "20b027"),
                 actionSuccessHover: SwiftUI.Color(hex: "246626"),
-                actionSuccessActive: SwiftUI.Color(hex: "135315")
+                actionSuccessActive: SwiftUI.Color(hex: "b3b7b0")
             ),
             reverseInverse: ReverseInverseValuesContainer(
                 actionReverseInverseSelected: SwiftUI.Color(hex: "1d2835cc"),
@@ -683,10 +684,10 @@ let designSystem = DesignSystem(
                 actionPrimarySubtleSelected: SwiftUI.Color(hex: "e5eeff"),
                 actionPrimarySubtleNormal: SwiftUI.Color(hex: "ebf0ff"),
                 actionPrimarySubtleHover: SwiftUI.Color(hex: "e5eeff"),
-                actionPrimarySubtleActive: SwiftUI.Color(hex: "ccdcff"),
-                actionPrimarySelected: SwiftUI.Color(hex: "1e4fc2"),
+                actionPrimarySubtleActive: SwiftUI.Color(hex: "0085ff"),
+                actionPrimarySelected: SwiftUI.Color(hex: "658b6e"),
                 actionPrimaryNormal: SwiftUI.Color(hex: "3061d5"),
-                actionPrimaryHover: SwiftUI.Color(hex: "1e4fc2"),
+                actionPrimaryHover: SwiftUI.Color(hex: "658b6e"),
                 actionPrimaryActive: SwiftUI.Color(hex: "113997")
             ),
             outline: OutlineValuesContainer(
@@ -727,11 +728,11 @@ let designSystem = DesignSystem(
                 actionDangerSubtleSelected: SwiftUI.Color(hex: "fee7e7"),
                 actionDangerSubtleNormal: SwiftUI.Color(hex: "ffebeb"),
                 actionDangerSubtleHover: SwiftUI.Color(hex: "fee7e7"),
-                actionDangerSubtleActive: SwiftUI.Color(hex: "fccfcf"),
-                actionDangerSelected: SwiftUI.Color(hex: "952d2d"),
-                actionDangerNormal: SwiftUI.Color(hex: "c53434"),
-                actionDangerHover: SwiftUI.Color(hex: "952d2d"),
-                actionDangerActive: SwiftUI.Color(hex: "6f2020")
+                actionDangerSubtleActive: SwiftUI.Color(hex: "76d91c"),
+                actionDangerSelected: SwiftUI.Color(hex: "63c7c3"),
+                actionDangerNormal: SwiftUI.Color(hex: "9e6610"),
+                actionDangerHover: SwiftUI.Color(hex: "63c7c3"),
+                actionDangerActive: SwiftUI.Color(hex: "30723a")
             )
         )
     ),
@@ -741,7 +742,7 @@ let designSystem = DesignSystem(
         none: 0.0,
         medium: 2.0,
         large: 4.0,
-        focus: 2.0,
+        focus: 1.0,
         borderWidth800: 8.0,
         borderWidth400: 4.0,
         borderWidth200: 2.0,
@@ -1040,14 +1041,14 @@ let designSystem = DesignSystem(
                 x: 0.0,
                 type: "dropShadow",
                 spread: -1.0,
-                color: "#1b242c0a",
+                color: "#1b212c0a",
                 blur: 2.0
             ), BoxShadow(
                 y: -16.0,
                 x: 0.0,
                 type: "dropShadow",
                 spread: -6.0,
-                color: "#1b242c29",
+                color: "#1b212c29",
                 blur: 24.0
             )],
             elevationTop300: [BoxShadow(
@@ -1055,14 +1056,14 @@ let designSystem = DesignSystem(
                 x: 0.0,
                 type: "dropShadow",
                 spread: -1.0,
-                color: "#1b242c0a",
+                color: "#1b212c0a",
                 blur: 2.0
             ), BoxShadow(
                 y: -8.0,
                 x: 0.0,
                 type: "dropShadow",
                 spread: -2.0,
-                color: "#1b242c1f",
+                color: "#1b212c1f",
                 blur: 16.0
             )],
             elevationTop200: [BoxShadow(
@@ -1070,14 +1071,14 @@ let designSystem = DesignSystem(
                 x: 0.0,
                 type: "dropShadow",
                 spread: -1.0,
-                color: "#1b242c0a",
+                color: "#1b212c0a",
                 blur: 2.0
             ), BoxShadow(
                 y: -2.0,
                 x: 0.0,
                 type: "dropShadow",
                 spread: -1.0,
-                color: "#1b242c14",
+                color: "#1b212c14",
                 blur: 8.0
             )],
             elevationTop100: BoxShadow(
@@ -1085,7 +1086,7 @@ let designSystem = DesignSystem(
                 x: 0.0,
                 type: "dropShadow",
                 spread: 0.0,
-                color: "#1b242c1f",
+                color: "#1b212c1f",
                 blur: 2.0
             )
         ),
@@ -1095,14 +1096,14 @@ let designSystem = DesignSystem(
                 x: 0.0,
                 type: "dropShadow",
                 spread: -1.0,
-                color: "#1b242c0a",
+                color: "#1b212c0a",
                 blur: 2.0
             ), BoxShadow(
                 y: 16.0,
                 x: 0.0,
                 type: "dropShadow",
                 spread: -6.0,
-                color: "#1b242c29",
+                color: "#1b212c29",
                 blur: 24.0
             )],
             elevationBottom300: [BoxShadow(
@@ -1110,14 +1111,14 @@ let designSystem = DesignSystem(
                 x: 0.0,
                 type: "dropShadow",
                 spread: -1.0,
-                color: "#1b242c0a",
+                color: "#1b212c0a",
                 blur: 2.0
             ), BoxShadow(
                 y: 8.0,
                 x: 0.0,
                 type: "dropShadow",
                 spread: -2.0,
-                color: "#1b242c1f",
+                color: "#1b212c1f",
                 blur: 16.0
             )],
             elevationBottom200: [BoxShadow(
@@ -1125,14 +1126,14 @@ let designSystem = DesignSystem(
                 x: 0.0,
                 type: "dropShadow",
                 spread: -1.0,
-                color: "#1b242c0a",
+                color: "#1b212c0a",
                 blur: 2.0
             ), BoxShadow(
                 y: 2.0,
                 x: 0.0,
                 type: "dropShadow",
                 spread: -1.0,
-                color: "#1b242c14",
+                color: "#1b212c14",
                 blur: 8.0
             )],
             elevationBottom100: BoxShadow(
@@ -1140,7 +1141,7 @@ let designSystem = DesignSystem(
                 x: 0.0,
                 type: "dropShadow",
                 spread: 0.0,
-                color: "#1b242c1f",
+                color: "#1b212c1f",
                 blur: 2.0
             )
         )
