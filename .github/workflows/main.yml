@@ -1,20 +1,20 @@
-name: My Workflow
+name: Run YAML on PR
 'on':
-  push:
-    branches:
-      - '*'
-      - '!main'
+  - push
 jobs:
-  build:
+  main_job:
+    if: ${{ github.head_ref == 'main' }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - if: github.ref == 'refs/heads/main'
-        name: Build and deploy to main branch
-        run: echo "this is the main"
-      - if: github.ref == 'refs/heads/mylo'
-        name: Run tests on mylo branch
-        run: echo "this is the mylo"
-      - if: github.ref == 'refs/heads/deel'
-        name: Deploy to deel branch
-        run: echo "this is the deel"
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Print staff
+        run: echo "Here is Main branch"
+  mylo_job:
+    if: ${{ github.head_ref == 'mylo' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Print staff
+        run: echo "Here is mylo branch"
