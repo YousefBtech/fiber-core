@@ -2,7 +2,7 @@ name: Run YAML on PR
 'on':
   push:
     branches:
-      - main
+      - '!main'
       - 'mylo'
       - 'deel'
 jobs:
