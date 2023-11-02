@@ -1,5 +1,5 @@
 name: Run YAML on PR
-'on':
+on:
   push:
     branches:
       - main
