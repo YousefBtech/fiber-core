@@ -10,8 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Get branch name
-        run: echo "Branch name: ${{ github.ref }}"
       - if: '${{ github.ref == ''refs/heads/main'' }}'
         name: Build and deploy to main branch
         run: npm run build && npm run deploy
