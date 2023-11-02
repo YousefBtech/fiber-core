@@ -1,29 +1,23 @@
-name: Run YAML on PR
-on:
+name: My Workflow
+'on':
   push:
     branches:
       - main
       - mylo
       - deel
 jobs:
-  main_job:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-      - name: Print staff
-        run: echo "Here is mylo branch"
-  mylo_job:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-      - name: Print staff
-        run: echo "Here is mylo branch"
-  deel_job:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-      - name: Print staff
-        run: echo "Here is deel branch"
+      - uses: actions/checkout@v2
+      - name: Get branch name
+        run: 'echo "${ github.ref }"'
+      - if: '${{ github.ref == ''refs/heads/main'' }}'
+        name: Build and deploy to main branch
+        run: npm run build && npm run deploy
+      - if: '${{ github.ref == ''refs/heads/mylo'' }}'
+        name: Run tests on mylo branch
+        run: npm run test
+      - if: '${{ github.ref == ''refs/heads/deel'' }}'
+        name: Deploy to deel branch
+        run: 'npm run deploy:deel'
