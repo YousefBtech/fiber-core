@@ -1,32 +1,23 @@
-name: Run YAML on PR
-'on':
+name: Create File on Branch Update
+
+on:
   push:
     branches:
-      - main
-      - 'mylo'
-      - 'deel'
+      - '*'
+
 jobs:
-  main_job:
-    if: ${{ github.ref == 'refs/heads/main' }}
+  create_file:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout repository
+      - name: Checkout Repository
         uses: actions/checkout@v2
-      - name: Print staff
-        run: echo "Here is Main branch"
-  mylo_job:
-    if: ${{ github.ref == 'refs/heads/mylo' }}
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-      - name: Print staff
-        run: echo "Here is mylo branch"
-  deel_job:
-    if: ${{ github.ref == 'refs/heads/deel' }}
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-      - name: Print staff
-        run: echo "Here is deel branch"
+
+      - name: Create File based on Branch
+        run: |
+          echo "This is a file created on branch ${{ github.ref }}" > created_file.txt
+          git add created_file.txt
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git commit -m "Create file on branch update"
+          git push
