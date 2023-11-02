@@ -1,43 +1,31 @@
 name: Run YAML on PR
-
 on:
   push:
     branches:
       - '*'
-
 jobs:
-  determine_branch:
-      runs-on: ubuntu-latest
-      steps:
-        - name: Determine branch
-          id: branch
-          run: echo "::set-output name=branch::${{ github.base_ref }}"
   main_job:
-    if: steps.determine_branch.outputs.branch == 'main'
+    if: ${{ github.head_ref == 'main' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-
       - name: Print staff
         run: echo "Here is Main branch"
-
   mylo_job:
-    if: steps.determine_branch.outputs.branch == 'mylo'
+    if: ${{ github.head_ref == 'mylo' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-
       - name: Print staff
         run: echo "Here is mylo branch"
-
+        
   deel_job:
-    if: steps.determine_branch.outputs.branch == 'deel'
+    if: ${{ github.head_ref == 'deel' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-
       - name: Print staff
         run: echo "Here is deel branch"
