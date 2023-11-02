@@ -1,18 +1,30 @@
-name: Main Workflow
-
-on:
+name: Run YAML on PR
+'on':
   push:
     branches:
       - '*'
-
 jobs:
-  build:
+  main_job:
+    if: '${{ github.ref == ''refs/heads/main'' }}'
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout Repository
+      - name: Checkout repository
         uses: actions/checkout@v2
-
-      # Add the rest of your build steps here
-      - name: Your Build Step
-        run: echo "Perform your build steps here"
+      - name: Print staff
+        run: echo "Here is Main branch"
+  mylo_job:
+    if: '${{ github.ref == ''refs/heads/mylo'' }}'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Print staff
+        run: echo "Here is mylo branch"
+  deel_job:
+    if: '${{ github.ref == ''refs/heads/deel'' }}'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Print staff
+        run: echo "Here is deel branch"
