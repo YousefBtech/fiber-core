@@ -1,28 +1,29 @@
-name: Copy DesignSystem.swift to fiber-ios
+name: Run YAML on PR
+
 on:
-  push:
+  pull_request:
     branches:
-      - main
+      - '*'
+
 jobs:
-  copy_file:
-    runs-on: macos-latest
+  main_job:
+    if: ${{ github.head_ref == 'main' }}
+    runs-on: ubuntu-latest
     steps:
-      - name: Checkout fiber-core
-        uses: actions/checkout@v3
-      - name: Copy quickType.swift to fiber-ios
-        env:
-          ACCESS_TOKEN: ${{ secrets.TOKEN }}
-          working-directory: ${{ github.workspace }} 
-        run: |
-          git config user.name 'YousefBtech'
-          git config user.email 'yousef.hanafi@btech.com'
-          git clone -b deel https://user:$ACCESS_TOKEN@github.com/YousefBtech/fiber-iOS.git fiber-ios-temp
-          rm -rf fiber-ios-temp/Sources/Fiber-iOS/DesignSystem.swift
-          cp DesignSystem.swift fiber-ios-temp/Sources/Fiber-iOS
-          cd fiber-ios-temp
-          git status
-          git add .
-          git commit -m "Copy DesignSystem.swift from fiber-core"
-          git push
-      - name: Cleanup
-        run: rm -rf fiber-ios-temp
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Print staff
+        run: echo "Here is Main branch"
+
+  mylo_job:
+    if: ${{ github.head_ref == 'mylo' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Print staff
+        run: echo "Here is mylo branch"
+
+      # Add steps specific to mylo branch
