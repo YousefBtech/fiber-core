@@ -15,7 +15,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
       - name: Print staff
-        run: echo "::set-output name=branch::$(echo ${GITHUB_REF#refs/heads/})"
+        run: echo "Here is mylo branch"
   mylo_job:
     runs-on: ubuntu-latest
     steps:
