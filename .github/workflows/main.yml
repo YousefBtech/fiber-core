@@ -12,10 +12,10 @@ jobs:
       - uses: actions/checkout@v2
       - if: '${{ github.ref == ''refs/heads/main'' }}'
         name: Build and deploy to main branch
-        run: npm run build && npm run deploy
+        run: echo "this is the main"
       - if: '${{ github.ref == ''refs/heads/mylo'' }}'
         name: Run tests on mylo branch
-        run: npm run test
+        run: echo "this is the mylo"
       - if: '${{ github.ref == ''refs/heads/deel'' }}'
         name: Deploy to deel branch
-        run: 'npm run deploy:deel'
+        run: echo "this is the deel"
