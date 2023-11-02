@@ -6,8 +6,14 @@ on:
       - '*'
 
 jobs:
+  determine_branch:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Determine branch
+          id: branch
+          run: echo "::set-output name=branch::${{ github.base_ref }}"
   main_job:
-    if: ${{ github.head_ref == 'main' }}
+    if: steps.determine_branch.outputs.branch == 'main'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -17,7 +23,7 @@ jobs:
         run: echo "Here is Main branch"
 
   mylo_job:
-    if: ${{ github.head_ref == 'mylo' }}
+    if: steps.determine_branch.outputs.branch == 'mylo'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -27,7 +33,7 @@ jobs:
         run: echo "Here is mylo branch"
 
   deel_job:
-    if: ${{ github.head_ref == 'deel' }}
+    if: steps.determine_branch.outputs.branch == 'deel'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
