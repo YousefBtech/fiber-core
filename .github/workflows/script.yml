@@ -2,10 +2,12 @@ name: Run YAML on PR
 'on':
   push:
     branches:
-      - '*'
+      - main
+      - 'mylo'
+      - 'deel'
 jobs:
   main_job:
-    if: '${{ github.ref == ''refs/heads/main'' }}'
+    if: '${{ github.ref == refs/heads/main }}'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -13,7 +15,7 @@ jobs:
       - name: Print staff
         run: echo "Here is Main branch"
   mylo_job:
-    if: '${{ github.ref == ''refs/heads/mylo'' }}'
+    if: '${{ github.ref == refs/heads/mylo }}'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -21,7 +23,7 @@ jobs:
       - name: Print staff
         run: echo "Here is mylo branch"
   deel_job:
-    if: '${{ github.ref == ''refs/heads/deel'' }}'
+    if: '${{ github.ref == refs/heads/deel }}'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
