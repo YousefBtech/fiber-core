@@ -18,6 +18,7 @@ public let designSystem = DesignSystem(
             whiteANegative1: SwiftUI.Color(hex: "ffffffd1"),
             whiteA0: SwiftUI.Color(hex: "ffffff")
             
+            
         ),
         warmGrayAlpha: WarmGrayAlphaValuesContainer(
             warmGrayANegative4: SwiftUI.Color(hex: "131311ed"),
