@@ -26,4 +26,12 @@ jobs:
       - name: Print staff
         run: echo "Here is mylo branch"
 
-      # Add steps specific to mylo branch
+  deel_job:
+    if: ${{ github.head_ref == 'deel' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Print staff
+        run: echo "Here is deel branch"
