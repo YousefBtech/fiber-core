@@ -13,18 +13,10 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2
 
-      - name: Generate release tag
-        id: generate_release_tag
-        uses: amitsingh-007/next-release-tag@v4.0.0
-        with:
-          github_token: ${{ secrets.GH_PAT }}
-          tag_template: 'i.i.i'
-
-      - name: Create Release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
-        with:
-          tag_name: ${{ steps.generate_release_tag.outputs.next_release_tag }}
-          release_name: Release ${{ steps.generate_release_tag.outputs.next_release_tag }}
+      - name: Create Tag
+        run: |
+          git config --local user.email "yousef.hanafi@btech.com"
+          git config --local user.name "YousefBtech"
+          git tag v$(cat VERSION)
+          git push origin v$(cat VERSION)
 
