@@ -39,10 +39,9 @@ jobs:
         uses: actions/create-release@v1
         id: create_release
         with:
-          tag_name: v${{ steps.bump_version.outputs.new_version }}
+          tag_name: V${{ steps.bump_version.outputs.new_version }}
           release_name: Release ${{ steps.bump_version.outputs.new_version }}
           body: |
-            Describe your release notes here
           draft: false
           prerelease: false
         env:
