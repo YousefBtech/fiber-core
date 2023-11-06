@@ -1,32 +1,54 @@
-name: Run YAML on PR
-'on':
+name: Auto Version and Release
+
+on:
   push:
     branches:
       - main
-      - 'mylo'
-      - 'deel'
+
 jobs:
-  main_job:
-    if: ${{ github.ref == 'refs/heads/main' }}
+  bump-and-release:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout repository
+      - name: Checkout Repository
         uses: actions/checkout@v2
-      - name: Print staff
-        run: echo "Here is Main branch"
-  mylo_job:
-    if: ${{ github.ref == 'refs/heads/mylo' }}
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-      - name: Print staff
-        run: echo "Here is mylo branch"
-  deel_job:
-    if: ${{ github.ref == 'refs/heads/deel' }}
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-      - name: Print staff
-        run: echo "Here is deel branch"
+
+      - name: Get Current Tag
+        id: get_tag
+        run: |
+          echo "::set-output name=tag::$(git describe --tags --abbrev=0)"
+          echo "::set-output name=tag_without_v::${GITHUB_REF#refs/tags/}"
+          echo "::set-output name=tag_without_v_and_dot::${GITHUB_REF#refs/tags/}"
+          echo "::set-output name=major::$(echo ${GITHUB_REF#refs/tags/v} | cut -d. -f1)"
+          echo "::set-output name=minor::$(echo ${GITHUB_REF#refs/tags/v} | cut -d. -f2)"
+          echo "::set-output name=patch::$(echo ${GITHUB_REF#refs/tags/v} | cut -d. -f3)"
+
+      - name: Bump Version
+        id: bump_version
+        run: |
+          # Increment the version based on your desired logic
+          NEW_MAJOR=$(( ${{ steps.get_tag.outputs.major }} + 1 ))
+          NEW_MINOR=$(( ${{ steps.get_tag.outputs.minor }} ))
+          NEW_PATCH=$(( ${{ steps.get_tag.outputs.patch }} ))
+
+          NEW_VERSION="$NEW_MAJOR.$NEW_MINOR.$NEW_PATCH"
+
+          echo "::set-output name=new_version::$NEW_VERSION"
+
+      - name: Create Release
+        uses: actions/create-release@v1
+        id: create_release
+        with:
+          tag_name: v${{ steps.bump_version.outputs.new_version }}
+          release_name: Release ${{ steps.bump_version.outputs.new_version }}
+          body: |
+            Describe your release notes here
+          draft: false
+          prerelease: false
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: my-package
+          path: path/to/your/package
+
