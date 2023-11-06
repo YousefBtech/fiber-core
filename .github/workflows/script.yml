@@ -45,10 +45,12 @@ jobs:
             Describe your release notes here
           draft: false
           prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v2
         with:
           name: my-package
-          path: path/to/your/package
+          path: fiber-core
 
