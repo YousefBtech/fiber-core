@@ -1,22 +1,20 @@
 name: Auto Version and Release
-
-on:
+'on':
   push:
     branches:
       - main
-
 jobs:
   bump-and-release:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
-
-      - name: Create Tag
+      - name: Count Changed Files
+        id: count_changed_files
         run: |
-          git config --local user.email "yousef.hanafi@btech.com"
-          git config --local user.name "YousefBtech"
-          git tag v$(cat VERSION)
-          git push origin v$(cat VERSION)
-
+          changed_files=$(git diff --name-only HEAD^..HEAD)
+          num_changed_files=$(echo "$changed_files" | wc -l)
+          echo "::set-output name=num_changed_files::$num_changed_files"
+      - name: Display Number of Changed Files
+        run: |
+          echo "Number of changed files: '${{ steps.count_changed_files.outputs.num_changed_files }}"'
