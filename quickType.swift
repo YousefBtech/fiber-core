@@ -8,5 +8,5 @@ import Foundation
 public struct AllColors {
     static let a0 = "#ff3e6f"
     static let a1 = "#ffe4e1"
-    static let a2 = "#0b00ff"
+    static let a2 = "#ee00ff"
 }
