@@ -25,18 +25,6 @@ jobs:
           cd fiber-ios-temp
           git add .
           git commit -m "Copy DesignSystem.swift from fiber-core"
-          git push 
-      - name: Create Pull Request using cURL
-        run: |
-          REPO="YousefBtech/fiber-iOS"
-          BODY="{
-            \"title\": \"Pull Request Title\",
-            \"head\": \"retail\",
-            \"base\": \"main\",
-            \"body\": \"Pull Request Description\"
-          }"
-          curl -X POST \
-            -H "Authorization: token $ACCESS_TOKEN" \
-            -H "Accept: application/vnd.github.v3+json" \
-            -d "$BODY" \
-            "https://api.github.com/repos/$REPO/pulls"
+          git push
+          gh pr create --base main --head retail --title "Your Pull Request Title" --body "Your Pull Request Description"
+
