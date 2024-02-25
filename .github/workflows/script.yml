@@ -18,8 +18,9 @@ jobs:
           git config --global user.name 'YousefBtech'
           git config --global user.email 'yousef.hanafi@btech.com'
           git clone -b retail https://user:$ACCESS_TOKEN@github.com/YousefBtech/fiber-iOS.git fiber-ios-temp
-          rm -rf fiber-ios-temp/Sources/Fiber-iOS/DesignSystem.swift
+          rm -rf fiber-ios-temp/Sources/Fiber-iOS/DesignSystemTypes.swift
           cp DesignSystemTypes.swift fiber-ios-temp/Sources/Fiber-iOS/
+          rm -rf fiber-ios-temp/Sources/Fiber-iOS/DesignSystemValues.swift
           cp DesignSystemValues.swift fiber-ios-temp/Sources/Fiber-iOS/
           cd fiber-ios-temp
           git add .
