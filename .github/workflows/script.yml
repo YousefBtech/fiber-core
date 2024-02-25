@@ -12,12 +12,12 @@ jobs:
         
       - name: Push to Fiber-iOS
         env:
-          ACCESS_TOKEN: ${{ secrets.GH_PAT }}
+          GH_TOKEN: ${{ secrets.GH_PAT }}
         working-directory: ${{ github.workspace }} 
         run: |
           git config --global user.name 'YousefBtech'
           git config --global user.email 'yousef.hanafi@btech.com'
-          git clone -b retail https://user:$ACCESS_TOKEN@github.com/YousefBtech/fiber-iOS.git fiber-ios-temp
+          git clone -b retail https://user:$GH_TOKEN@github.com/YousefBtech/fiber-iOS.git fiber-ios-temp
           rm -rf fiber-ios-temp/Sources/Fiber-iOS/DesignSystemTypes.swift
           cp DesignSystemTypes.swift fiber-ios-temp/Sources/Fiber-iOS/
           rm -rf fiber-ios-temp/Sources/Fiber-iOS/DesignSystemValues.swift
