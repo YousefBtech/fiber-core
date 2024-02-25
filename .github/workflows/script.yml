@@ -27,4 +27,3 @@ jobs:
           git commit -m "Copy DesignSystem.swift from fiber-core"
           git push
           gh pr create --base main --head retail --title "Your Pull Request Title" --body "Your Pull Request Description"
-
