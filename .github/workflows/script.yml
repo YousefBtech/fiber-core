@@ -1,5 +1,5 @@
 name: Auto Version and Release
-'on':
+"on":
   push:
     branches:
       - main
@@ -9,21 +9,25 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
-        
+
       - name: Push to Fiber-iOS
         env:
           GH_TOKEN: ${{ secrets.GH_PAT }}
-        working-directory: ${{ github.workspace }} 
+        working-directory: ${{ github.workspace }}
         run: |
           git config --global user.name 'YousefBtech'
           git config --global user.email 'yousef.hanafi@btech.com'
-          git clone -b retail https://user:$GH_TOKEN@github.com/YousefBtech/fiber-iOS.git fiber-ios-temp
-          rm -rf fiber-ios-temp/Sources/Fiber-iOS/DesignSystemTypes.swift
-          cp DesignSystemTypes.swift fiber-ios-temp/Sources/Fiber-iOS/
-          rm -rf fiber-ios-temp/Sources/Fiber-iOS/DesignSystemValues.swift
-          cp DesignSystemValues.swift fiber-ios-temp/Sources/Fiber-iOS/
+          git clone -b retail https://user:$GH_TOKEN@github.com/btechlabs/fiber-ios.git fiber-ios-temp
+          rm -rf fiber-ios-temp/Sources/FiberDesignSystem/Fiber/DesignSystem/DesignSystemTypes.swift
+          cp DesignSystemTypes.swift fiber-ios-temp/Sources/FiberDesignSystem/Fiber/DesignSystem/
+          rm -rf fiber-ios-temp/Sources/FiberRetail/DesignSystemValues.swift
+          cp DesignSystemValues.swift fiber-ios-temp/Sources/FiberRetail/
+          rm -rf fiber-ios-temp/Sources/FiberDesignSystem/Resources/Assets/Colors.xcassets
+          cp Colors.xcassets fiber-ios-temp/Sources/FiberDesignSystem/Resources/Assets/
+          rm -rf fiber-ios-temp/Sources/FiberRetail/Resources/Colors.xcassets
+          cp Colors.xcassets fiber-ios-temp/Sources/FiberRetail/Resources/
           cd fiber-ios-temp
           git add .
-          git commit -m "Copy DesignSystem.swift from fiber-core"
+          git commit -m "Copy DesignSystem files from fiber-core"
           git push
-          gh pr create --base main --head retail --title "Your Pull Request Title" --body "Your Pull Request Description"
+          gh pr create --base main --head preprod --title “chore: update design system value” --body "update design system value"
