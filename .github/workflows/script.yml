@@ -23,9 +23,9 @@ jobs:
           rm -rf fiber-ios-temp/Sources/FiberRetail/DesignSystemValues.swift
           cp DesignSystemValues.swift fiber-ios-temp/Sources/FiberRetail/
           rm -rf fiber-ios-temp/Sources/FiberDesignSystem/Resources/Assets/Colors.xcassets
-          cp Colors.xcassets fiber-ios-temp/Sources/FiberDesignSystem/Resources/Assets/
+          cp -r Colors.xcassets fiber-ios-temp/Sources/FiberDesignSystem/Resources/Assets/
           rm -rf fiber-ios-temp/Sources/FiberRetail/Resources/Colors.xcassets
-          cp Colors.xcassets fiber-ios-temp/Sources/FiberRetail/Resources/
+          cp -r Colors.xcassets fiber-ios-temp/Sources/FiberRetail/Resources/
           cd fiber-ios-temp
           git add .
           git commit -m "Copy DesignSystem files from fiber-core"
