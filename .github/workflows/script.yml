@@ -17,7 +17,7 @@ jobs:
         run: |
           git config --global user.name 'YousefBtech'
           git config --global user.email 'yousef.hanafi@btech.com'
-          git clone -b retail https://user:$GH_TOKEN@github.com/btechlabs/fiber-ios.git fiber-ios-temp
+          git clone -b preprod https://user:$GH_TOKEN@github.com/btechlabs/fiber-ios.git fiber-ios-temp
           rm -rf fiber-ios-temp/Sources/FiberDesignSystem/Fiber/DesignSystem/DesignSystemTypes.swift
           cp DesignSystemTypes.swift fiber-ios-temp/Sources/FiberDesignSystem/Fiber/DesignSystem/
           rm -rf fiber-ios-temp/Sources/FiberRetail/DesignSystemValues.swift
