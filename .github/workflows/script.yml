@@ -30,4 +30,4 @@ jobs:
           git add .
           git commit -m "Copy DesignSystem files from fiber-core"
           git push
-          gh pr create --base main --head preprod --title “chore: update design system value” --body "update design system value"
+          gh pr create --base main --head preprod --title "chore: Update design system values" --body "Your Pull Request Description"
