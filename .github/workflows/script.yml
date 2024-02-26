@@ -1,4 +1,4 @@
-name: Auto Version and Release
+name: Update Design System
 "on":
   push:
     branches:
@@ -17,17 +17,27 @@ jobs:
         run: |
           git config --global user.name 'YousefBtech'
           git config --global user.email 'yousef.hanafi@btech.com'
+          
+          fiberRetailPath="fiber-ios-temp/Sources/FiberRetail"
+          fiberDesignSystemPath="fiber-ios-temp/Sources/FiberDesignSystem"
+          
           git clone -b preprod https://user:$GH_TOKEN@github.com/btechlabs/fiber-ios.git fiber-ios-temp
-          rm -rf fiber-ios-temp/Sources/FiberDesignSystem/Fiber/DesignSystem/DesignSystemTypes.swift
-          cp DesignSystemTypes.swift fiber-ios-temp/Sources/FiberDesignSystem/Fiber/DesignSystem/
-          rm -rf fiber-ios-temp/Sources/FiberRetail/DesignSystemValues.swift
-          cp DesignSystemValues.swift fiber-ios-temp/Sources/FiberRetail/
-          rm -rf fiber-ios-temp/Sources/FiberDesignSystem/Resources/Assets/Colors.xcassets
-          cp -r Colors.xcassets fiber-ios-temp/Sources/FiberDesignSystem/Resources/Assets/
-          rm -rf fiber-ios-temp/Sources/FiberRetail/Resources/Colors.xcassets
-          cp -r Colors.xcassets fiber-ios-temp/Sources/FiberRetail/Resources/
+          
+          rm -rf "$fiberDesignSystemPath/Fiber/DesignSystem/DesignSystemTypes.swift"
+          cp DesignSystemTypes.swift "$fiberDesignSystemPath/Fiber/DesignSystem/"
+          
+          rm -rf "$fiberRetailPath/DesignSystemValues.swift"
+          cp DesignSystemValues.swift "$fiberRetailPath/"
+          
+          rm -rf "$fiberDesignSystemPath/Resources/Assets/Colors.xcassets"
+          cp -r Colors.xcassets "$fiberDesignSystemPath/Resources/Assets/"
+          
+          rm -rf "$fiberRetailPath/Resources/Colors.xcassets"
+          cp -r Colors.xcassets "$fiberRetailPath/Resources/"
+          
           cd fiber-ios-temp
           git add .
           git commit -m "Copy DesignSystem files from fiber-core"
           git push
+
           gh pr create --base main --head preprod --title "chore: Update design system values" --body "Your Pull Request Description"
