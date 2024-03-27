@@ -2,18 +2,18 @@
 //  DesignSystemValues.swift
 //
 //
-//  Created by Yousef Alaa on 30/11/2023.
+//  Created by Yousef Alaa on 27/03/2024.
 //
-
-import Foundation
 import SwiftUI
+import DesignSystemCore
+import Foundation
 
 public let designSystem = DesignSystem(
     typography: DSTypography(
         utility: DSUtility(
             label: Typography(
-                lineHeight: 1.4,
-                fontWeight: 600,
+                lineHeight: 1.8,
+                fontWeight: 800,
                 fontSize: 12.8,
                 fontFamily: "Noto Sans"
             ),
