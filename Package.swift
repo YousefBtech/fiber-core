@@ -13,12 +13,12 @@ let package = Package(
             targets: ["DesignSystemCore"]
         ),
         .library(
-            name: "FiberMylo",
-            targets: ["FiberMylo"]
+            name: "Mylo",
+            targets: ["Mylo"]
         ),
         .library(
-            name: "FiberRetail",
-            targets: ["FiberRetail"]
+            name: "Retail",
+            targets: ["Retail"]
         )
     ],
     targets: [
@@ -27,12 +27,12 @@ let package = Package(
         .target(name: "DesignSystemCore",
                 path: "DesignSystemCore/Sources/DesignSystemCore"
                ),
-        .target(name: "FiberMylo",
-                path: "DesignSystemCore/Sources/FiberMylo",
+        .target(name: "Mylo",
+                path: "DesignSystemCore/Sources/Mylo",
                 resources: [.copy("Resources/Colors.xcassets")]
                ),
-        .target(name: "FiberRetail",
-                path: "DesignSystemCore/Sources/FiberRetail",
+        .target(name: "Retail",
+                path: "DesignSystemCore/Sources/Retail",
                 resources: [.copy("Resources/Colors.xcassets")]
                ),
         .testTarget(
