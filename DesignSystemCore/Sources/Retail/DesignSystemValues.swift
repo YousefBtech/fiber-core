@@ -13,8 +13,8 @@ public let designSystem = DesignSystem(
     typography: DSTypography(
         utility: DSUtility(
             label: Typography(
-                lineHeight: 1.5,
-                fontWeight: 600,
+                lineHeight: 1.2,
+                fontWeight: 800,
                 fontSize: 12.8,
                 fontFamily: "Noto Sans"
             ),
@@ -124,68 +124,68 @@ public let designSystem = DesignSystem(
     ),
     color: DSColor(
         warning: DSWarning(
-            l4: SwiftUI.Color(.warningL4),
-            l3: SwiftUI.Color(.warningL3),
-            l2: SwiftUI.Color(.warningL2),
-            l1: SwiftUI.Color(.warningL1),
-            l0: SwiftUI.Color(.warningL0),
-            d3: SwiftUI.Color(.warningD3),
-            d2: SwiftUI.Color(.warningD2),
-            d1: SwiftUI.Color(.warningD1)
+            l4: SwiftUI.Color("warningL4"),
+            l3: SwiftUI.Color("warningL3"),
+            l2: SwiftUI.Color("warningL2"),
+            l1: SwiftUI.Color("warningL1"),
+            l0: SwiftUI.Color("warningL0"),
+            d3: SwiftUI.Color("warningD3"),
+            d2: SwiftUI.Color("warningD2"),
+            d1: SwiftUI.Color("warningD1")
         ),
         success: DSSuccess(
-            l4: SwiftUI.Color(.successL4),
-            l3: SwiftUI.Color(.successL3),
-            l2: SwiftUI.Color(.successL2),
-            l1: SwiftUI.Color(.successL1),
-            l0: SwiftUI.Color(.successL0),
-            d3: SwiftUI.Color(.successD3),
-            d2: SwiftUI.Color(.successD2),
-            d1: SwiftUI.Color(.successD1)
+            l4: SwiftUI.Color("successL4"),
+            l3: SwiftUI.Color("successL3"),
+            l2: SwiftUI.Color("successL2"),
+            l1: SwiftUI.Color("successL1"),
+            l0: SwiftUI.Color("successL0"),
+            d3: SwiftUI.Color("successD3"),
+            d2: SwiftUI.Color("successD2"),
+            d1: SwiftUI.Color("successD1")
         ),
         primary: DSPrimary(
-            l4: SwiftUI.Color(.primaryL4),
-            l3: SwiftUI.Color(.primaryL3),
-            l2: SwiftUI.Color(.primaryL2),
-            l1: SwiftUI.Color(.primaryL1),
-            l0: SwiftUI.Color(.primaryL0),
-            d3: SwiftUI.Color(.primaryD3),
-            d2: SwiftUI.Color(.primaryD2),
-            d1: SwiftUI.Color(.primaryD1)
+            l4: SwiftUI.Color("primaryL4"),
+            l3: SwiftUI.Color("primaryL3"),
+            l2: SwiftUI.Color("primaryL2"),
+            l1: SwiftUI.Color("primaryL1"),
+            l0: SwiftUI.Color("primaryL0"),
+            d3: SwiftUI.Color("primaryD3"),
+            d2: SwiftUI.Color("primaryD2"),
+            d1: SwiftUI.Color("primaryD1")
         ),
         neutral: DSNeutral(
-            l4: SwiftUI.Color(.neutralL4),
-            l3: SwiftUI.Color(.neutralL3),
-            l2: SwiftUI.Color(.neutralL2),
-            l1: SwiftUI.Color(.neutralL1),
-            l0: SwiftUI.Color(.neutralL0),
-            d3: SwiftUI.Color(.neutralD3),
-            d2: SwiftUI.Color(.neutralD2),
-            d1: SwiftUI.Color(.neutralD1)
+            l4: SwiftUI.Color("neutralL4"),
+            l3: SwiftUI.Color("neutralL3"),
+            l2: SwiftUI.Color("neutralL2"),
+            l1: SwiftUI.Color("neutralL1"),
+            l0: SwiftUI.Color("neutralL0"),
+            d3: SwiftUI.Color("neutralD3"),
+            d2: SwiftUI.Color("neutralD2"),
+            d1: SwiftUI.Color("neutralD1")
         ),
         info: DSInfo(
-            l4: SwiftUI.Color(.infoL4),
-            l3: SwiftUI.Color(.infoL3),
-            l2: SwiftUI.Color(.infoL2),
-            l1: SwiftUI.Color(.infoL1),
-            l0: SwiftUI.Color(.infoL0),
-            d3: SwiftUI.Color(.infoD3),
-            d2: SwiftUI.Color(.infoD2),
-            d1: SwiftUI.Color(.infoD1)
+            l4: SwiftUI.Color("infoL4"),
+            l3: SwiftUI.Color("infoL3"),
+            l2: SwiftUI.Color("infoL2"),
+            l1: SwiftUI.Color("infoL1"),
+            l0: SwiftUI.Color("infoL0"),
+            d3: SwiftUI.Color("infoD3"),
+            d2: SwiftUI.Color("infoD2"),
+            d1: SwiftUI.Color("infoD1")
         ),
         danger: DSDanger(
-            l4: SwiftUI.Color(.dangerL4),
-            l3: SwiftUI.Color(.dangerL3),
-            l2: SwiftUI.Color(.dangerL2),
-            l1: SwiftUI.Color(.dangerL1),
-            l0: SwiftUI.Color(.dangerL0),
-            d3: SwiftUI.Color(.dangerD3),
-            d2: SwiftUI.Color(.dangerD2),
-            d1: SwiftUI.Color(.dangerD1)
+            l4: SwiftUI.Color("dangerL4"),
+            l3: SwiftUI.Color("dangerL3"),
+            l2: SwiftUI.Color("dangerL2"),
+            l1: SwiftUI.Color("dangerL1"),
+            l0: SwiftUI.Color("dangerL0"),
+            d3: SwiftUI.Color("dangerD3"),
+            d2: SwiftUI.Color("dangerD2"),
+            d1: SwiftUI.Color("dangerD1")
         ),
         absolute: DSAbsolute(
-            light: SwiftUI.Color(.absoluteLight),
-            dark: SwiftUI.Color(.absoluteDark)
+            light: SwiftUI.Color("absoluteLight"),
+            dark: SwiftUI.Color("absoluteDark")
         )
     )
 )
