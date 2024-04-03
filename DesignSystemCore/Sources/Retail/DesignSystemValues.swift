@@ -181,7 +181,7 @@ public let designSystem = DesignSystem(
             l0: SwiftUI.Color("dangerL0", bundle: Bundle.main),
             d3: SwiftUI.Color("dangerD3", bundle: Bundle.main),
             d2: SwiftUI.Color("dangerD2", bundle: Bundle.main),
-            d1: SwiftUI.Color("dangerD1", bundle: Bundle.main)
+            d1: SwiftUI.Color(.dangerD1)
         ),
         absolute: DSAbsolute(
             light: SwiftUI.Color("absoluteLight", bundle: Bundle.main),
