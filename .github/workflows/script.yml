@@ -1,36 +1,71 @@
-name: Create Release
+name: Create New Swift Package Version
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
 
 jobs:
-  create_release:
-    runs-on: macos-latest
+  create-version:
+    runs-on: macos-latest  # Consider using a macOS runner for native Swift development
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
-      - name: Set up Swift
-        uses: swift-actions/setup-swift@v2
+      - name: Use a specific Swift version (if needed)
+        uses: swift-actions/setup-swift@v1
         with:
-          swift-version: '5.9'  # Specify the Swift version you are using
+          swift-version: '5.7'  # Replace with your desired version (optional)
 
-      - name: Build and test
+      - name: Install Dependencies
+        run: swift package update
+
+      - name: Get Current Version (assuming versioning in Package.swift)
         run: |
-          swift build
-          swift test
+          current_version=$(grep version: Package.swift | cut -d ' ' -f 2 | cut -d '"' -f 2)
+          echo "Current version: $current_version"
 
-      - name: Create release
-        id: create_release
-        uses: softprops/action-gh-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
+      - name: Increment Version (adjust script based on your versioning logic)
+        run: |
+          major=$(echo $current_version | cut -d '.' -f 1)
+          minor=$(echo $current_version | cut -d '.' -f 2)
+          patch=$(echo $current_version | cut -d '.' -f 3)
+
+          # Assuming semantic versioning: increment patch by default
+          new_version="$major.$minor.$(($patch + 1))"
+
+          # Optionally, handle major/minor version bumps based on commit messages
+          # (replace with your custom logic if needed)
+          if [[ $MESSAGE =~ ^feat:.* ]]; then
+              new_version="$major.$(($minor + 1)).0"
+          fi
+
+          echo "New version: $new_version"
+          echo "::set-output name=NEW_VERSION::$new_version"
+
+      - name: Update Package.swift with New Version
+        run: |
+          sed -i "s/version: .*/version: \"\$${NEW_VERSION}\"/ Package.swift"
+
+      - name: Commit Changes
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add Package.swift
+          git commit -m "Update package version to $NEW_VERSION"
+
+      - name: Create Git Tag (optional, adjust tag format if needed)
+        run: git tag "v$NEW_VERSION"
+        
+      - name: Push Changes (securely with PAT)
+        uses: actions/checkout@v3
         with:
-          files: |
-            ./*.zip  # Add any specific files you want to include in the release
-
-      - name: Get release version
-        run: echo "The new release version is ${{ steps.create_release.outputs.version }}"
+          fetch-depth: 0  # Fetch all branches for proper authentication
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }}  # Use GITHUB_TOKEN for public registry
+          # Use a Personal Access Token (PAT) with write access for private registry:
+          PUSH_ACCESS_TOKEN: ${{ secrets.PUSH_ACCESS_TOKEN }}
+        run: |
+          git config user.name "YousefBtech"
+          git config user.email "yousef.hanafi@btech.com"
+          git remote add origin https://${PUSH_ACCESS_TOKEN}@github.com/$GITHUB_REPOSITORY.git
+          git push origin ${{ github.ref }} --tags
