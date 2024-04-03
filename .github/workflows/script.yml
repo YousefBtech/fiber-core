@@ -1,43 +1,36 @@
-name: Update Design System
-"on":
+name: Create Release
+
+on:
   push:
     branches:
       - main
+
 jobs:
-  bump-and-release:
+  create_release:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout Repository
+      - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Push to Fiber-iOS
-        env:
-          GH_TOKEN: ${{ secrets.GH_PAT }}
-        working-directory: ${{ github.workspace }}
-        run: |
-          git config --global user.name 'YousefBtech'
-          git config --global user.email 'yousef.hanafi@btech.com'
-          
-          fiberRetailPath="fiber-ios-temp/Sources/FiberRetail"
-          fiberDesignSystemPath="fiber-ios-temp/Sources/FiberDesignSystem"
-          
-          git clone -b preprod https://user:$GH_TOKEN@github.com/btechlabs/fiber-ios.git fiber-ios-temp
-          
-          rm -rf "$fiberDesignSystemPath/Fiber/DesignSystem/DesignSystemTypes.swift"
-          cp DesignSystemTypes.swift "$fiberDesignSystemPath/Fiber/DesignSystem/"
-          
-          rm -rf "$fiberRetailPath/DesignSystemValues.swift"
-          cp DesignSystemValues.swift "$fiberRetailPath/"
-          
-          rm -rf "$fiberDesignSystemPath/Resources/Assets/Colors.xcassets"
-          cp -r Colors.xcassets "$fiberDesignSystemPath/Resources/Assets/"
-          
-          rm -rf "$fiberRetailPath/Resources/Colors.xcassets"
-          cp -r Colors.xcassets "$fiberRetailPath/Resources/"
-          
-          cd fiber-ios-temp
-          git add .
-          git commit -m "Copy DesignSystem files from fiber-core"
-          git push
+      - name: Set up Swift
+        uses: swift-actions/setup-swift@v2
+        with:
+          swift-version: '5.9'  # Specify the Swift version you are using
 
-          gh pr create --base main --head preprod --title "chore: Update design system values" --body "Your Pull Request Description"
+      - name: Build and test
+        run: |
+          swift build
+          swift test
+
+      - name: Create release
+        id: create_release
+        uses: softprops/action-gh-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
+        with:
+          files: |
+            ./*.zip  # Add any specific files you want to include in the release
+
+      - name: Get release version
+        run: echo "The new release version is ${{ steps.create_release.outputs.version }}"
