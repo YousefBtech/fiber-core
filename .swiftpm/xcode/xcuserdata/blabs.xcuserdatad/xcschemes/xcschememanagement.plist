@@ -57,6 +57,16 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>Mylo</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>Retail</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>fiber-core</key>
 		<dict>
 			<key>primary</key>

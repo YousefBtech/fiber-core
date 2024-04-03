@@ -12,7 +12,7 @@ public let designSystem = DesignSystem(
     typography: DSTypography(
         utility: DSUtility(
             label: Typography(
-                lineHeight: 1.8,
+                lineHeight: 1.0,
                 fontWeight: 800,
                 fontSize: 12.8,
                 fontFamily: "Noto Sans"
