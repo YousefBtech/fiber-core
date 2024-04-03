@@ -124,68 +124,68 @@ public let designSystem = DesignSystem(
     ),
     color: DSColor(
         warning: DSWarning(
-            l4: SwiftUI.Color("warningL4", bundle: Bundle.main),
-            l3: SwiftUI.Color("warningL3", bundle: Bundle.main),
-            l2: SwiftUI.Color("warningL2", bundle: Bundle.main),
-            l1: SwiftUI.Color("warningL1", bundle: Bundle.main),
-            l0: SwiftUI.Color("warningL0", bundle: Bundle.main),
-            d3: SwiftUI.Color("warningD3", bundle: Bundle.main),
-            d2: SwiftUI.Color("warningD2", bundle: Bundle.main),
-            d1: SwiftUI.Color("warningD1", bundle: Bundle.main)
+            l4: SwiftUI.Color("warningL4", bundle: Bundle.module),
+            l3: SwiftUI.Color("warningL3", bundle: Bundle.module),
+            l2: SwiftUI.Color("warningL2", bundle: Bundle.module),
+            l1: SwiftUI.Color("warningL1", bundle: Bundle.module),
+            l0: SwiftUI.Color("warningL0", bundle: Bundle.module),
+            d3: SwiftUI.Color("warningD3", bundle: Bundle.module),
+            d2: SwiftUI.Color("warningD2", bundle: Bundle.module),
+            d1: SwiftUI.Color("warningD1", bundle: Bundle.module)
         ),
         success: DSSuccess(
-            l4: SwiftUI.Color("successL4", bundle: Bundle.main),
-            l3: SwiftUI.Color("successL3", bundle: Bundle.main),
-            l2: SwiftUI.Color("successL2", bundle: Bundle.main),
-            l1: SwiftUI.Color("successL1", bundle: Bundle.main),
-            l0: SwiftUI.Color("successL0", bundle: Bundle.main),
-            d3: SwiftUI.Color("successD3", bundle: Bundle.main),
-            d2: SwiftUI.Color("successD2", bundle: Bundle.main),
-            d1: SwiftUI.Color("successD1", bundle: Bundle.main)
+            l4: SwiftUI.Color("successL4", bundle: Bundle.module),
+            l3: SwiftUI.Color("successL3", bundle: Bundle.module),
+            l2: SwiftUI.Color("successL2", bundle: Bundle.module),
+            l1: SwiftUI.Color("successL1", bundle: Bundle.module),
+            l0: SwiftUI.Color("successL0", bundle: Bundle.module),
+            d3: SwiftUI.Color("successD3", bundle: Bundle.module),
+            d2: SwiftUI.Color("successD2", bundle: Bundle.module),
+            d1: SwiftUI.Color("successD1", bundle: Bundle.module)
         ),
         primary: DSPrimary(
-            l4: SwiftUI.Color("primaryL4", bundle: Bundle.main),
-            l3: SwiftUI.Color("primaryL3", bundle: Bundle.main),
-            l2: SwiftUI.Color("primaryL2", bundle: Bundle.main),
-            l1: SwiftUI.Color("primaryL1", bundle: Bundle.main),
-            l0: SwiftUI.Color("primaryL0", bundle: Bundle.main),
-            d3: SwiftUI.Color("primaryD3", bundle: Bundle.main),
-            d2: SwiftUI.Color("primaryD2", bundle: Bundle.main),
-            d1: SwiftUI.Color("primaryD1", bundle: Bundle.main)
+            l4: SwiftUI.Color("primaryL4", bundle: Bundle.module),
+            l3: SwiftUI.Color("primaryL3", bundle: Bundle.module),
+            l2: SwiftUI.Color("primaryL2", bundle: Bundle.module),
+            l1: SwiftUI.Color("primaryL1", bundle: Bundle.module),
+            l0: SwiftUI.Color("primaryL0", bundle: Bundle.module),
+            d3: SwiftUI.Color("primaryD3", bundle: Bundle.module),
+            d2: SwiftUI.Color("primaryD2", bundle: Bundle.module),
+            d1: SwiftUI.Color("primaryD1", bundle: Bundle.module)
         ),
         neutral: DSNeutral(
-            l4: SwiftUI.Color("neutralL4", bundle: Bundle.main),
-            l3: SwiftUI.Color("neutralL3", bundle: Bundle.main),
-            l2: SwiftUI.Color("neutralL2", bundle: Bundle.main),
-            l1: SwiftUI.Color("neutralL1", bundle: Bundle.main),
-            l0: SwiftUI.Color("neutralL0", bundle: Bundle.main),
-            d3: SwiftUI.Color("neutralD3", bundle: Bundle.main),
-            d2: SwiftUI.Color("neutralD2", bundle: Bundle.main),
-            d1: SwiftUI.Color("neutralD1", bundle: Bundle.main)
+            l4: SwiftUI.Color("neutralL4", bundle: Bundle.module),
+            l3: SwiftUI.Color("neutralL3", bundle: Bundle.module),
+            l2: SwiftUI.Color("neutralL2", bundle: Bundle.module),
+            l1: SwiftUI.Color("neutralL1", bundle: Bundle.module),
+            l0: SwiftUI.Color("neutralL0", bundle: Bundle.module),
+            d3: SwiftUI.Color("neutralD3", bundle: Bundle.module),
+            d2: SwiftUI.Color("neutralD2", bundle: Bundle.module),
+            d1: SwiftUI.Color("neutralD1", bundle: Bundle.module)
         ),
         info: DSInfo(
-            l4: SwiftUI.Color("infoL4", bundle: Bundle.main),
-            l3: SwiftUI.Color("infoL3", bundle: Bundle.main),
-            l2: SwiftUI.Color("infoL2", bundle: Bundle.main),
-            l1: SwiftUI.Color("infoL1", bundle: Bundle.main),
-            l0: SwiftUI.Color("infoL0", bundle: Bundle.main),
-            d3: SwiftUI.Color("infoD3", bundle: Bundle.main),
-            d2: SwiftUI.Color("infoD2", bundle: Bundle.main),
-            d1: SwiftUI.Color("infoD1", bundle: Bundle.main)
+            l4: SwiftUI.Color("infoL4", bundle: Bundle.module),
+            l3: SwiftUI.Color("infoL3", bundle: Bundle.module),
+            l2: SwiftUI.Color("infoL2", bundle: Bundle.module),
+            l1: SwiftUI.Color("infoL1", bundle: Bundle.module),
+            l0: SwiftUI.Color("infoL0", bundle: Bundle.module),
+            d3: SwiftUI.Color("infoD3", bundle: Bundle.module),
+            d2: SwiftUI.Color("infoD2", bundle: Bundle.module),
+            d1: SwiftUI.Color("infoD1", bundle: Bundle.module)
         ),
         danger: DSDanger(
-            l4: SwiftUI.Color("dangerL4", bundle: Bundle.main),
-            l3: SwiftUI.Color("dangerL3", bundle: Bundle.main),
-            l2: SwiftUI.Color("dangerL2", bundle: Bundle.main),
-            l1: SwiftUI.Color("dangerL1", bundle: Bundle.main),
-            l0: SwiftUI.Color("dangerL0", bundle: Bundle.main),
-            d3: SwiftUI.Color("dangerD3", bundle: Bundle.main),
-            d2: SwiftUI.Color("dangerD2", bundle: Bundle.main),
-            d1: SwiftUI.Color("dangerD1", bundle: Bundle.main)
+            l4: SwiftUI.Color("dangerL4", bundle: Bundle.module),
+            l3: SwiftUI.Color("dangerL3", bundle: Bundle.module),
+            l2: SwiftUI.Color("dangerL2", bundle: Bundle.module),
+            l1: SwiftUI.Color("dangerL1", bundle: Bundle.module),
+            l0: SwiftUI.Color("dangerL0", bundle: Bundle.module),
+            d3: SwiftUI.Color("dangerD3", bundle: Bundle.module),
+            d2: SwiftUI.Color("dangerD2", bundle: Bundle.module),
+            d1: SwiftUI.Color("dangerD1", bundle: Bundle.module)
         ),
         absolute: DSAbsolute(
-            light: SwiftUI.Color("absoluteLight", bundle: Bundle.main),
-            dark: SwiftUI.Color("absoluteDark", bundle: Bundle.main)
+            light: SwiftUI.Color("absoluteLight", bundle: Bundle.module),
+            dark: SwiftUI.Color("absoluteDark", bundle: Bundle.module)
         )
     )
 )
