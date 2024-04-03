@@ -1,32 +1,27 @@
-//
-//  DesignSystemTypes.swift
-//
-//
-//  Created by Yousef Alaa on 01/11/2023.
-//
-
 import SwiftUI
 
 public class DesignSystem {
+    public var isDarkTheme = false
     public let typography: DSTypography
     public let size: DSSize
-    public let padding: DSPadding
-    public let borderradius: DSBorderradius
+    public let space: DSSpace
+    public let radii: DSRadii
     public let borderwidth: DSBorderwidth
     public let color: DSColor
+    
 
     public init(
         typography: DSTypography,
         size: DSSize,
-        padding: DSPadding,
-        borderradius: DSBorderradius,
+        space: DSSpace,
+        radii: DSRadii,
         borderwidth: DSBorderwidth,
         color: DSColor
     ) {
         self.typography = typography
         self.size = size
-        self.padding = padding
-        self.borderradius = borderradius
+        self.space = space
+        self.radii = radii
         self.borderwidth = borderwidth
         self.color = color
     }
@@ -37,6 +32,7 @@ public struct Typography {
     public let fontWeight: CGFloat
     public let fontSize: CGFloat
     public let fontFamily: String
+    
 
     public init(
         lineHeight: CGFloat,
@@ -51,11 +47,12 @@ public struct Typography {
     }
 }
 
-public struct DSHeader {
+public struct DSHeadline {
     public let xsmall: Typography
     public let small: Typography
     public let medium: Typography
     public let expressive: Typography
+    
 
     public init(
         xsmall: Typography,
@@ -74,6 +71,7 @@ public struct DSBody {
     public let small: Typography
     public let regular: Typography
     public let medium: Typography
+    
 
     public init(
         small: Typography,
@@ -90,6 +88,7 @@ public struct DSUtility {
     public let label: Typography
     public let helper: Typography
     public let button: Typography
+    
 
     public init(
         label: Typography,
@@ -104,16 +103,17 @@ public struct DSUtility {
 
 public struct DSTypography {
     public let utility: DSUtility
-    public let header: DSHeader
+    public let headline: DSHeadline
     public let body: DSBody
+    
 
     public init(
         utility: DSUtility,
-        header: DSHeader,
+        headline: DSHeadline,
         body: DSBody
     ) {
         self.utility = utility
-        self.header = header
+        self.headline = headline
         self.body = body
     }
 }
@@ -125,7 +125,9 @@ public struct DSSize {
     public let medium: CGFloat
     public let large: CGFloat
     public let _8xsmall: CGFloat
+    public let _8xlarge: CGFloat
     public let _7xsmall: CGFloat
+    public let _7xlarge: CGFloat
     public let _6xsmall: CGFloat
     public let _6xlarge: CGFloat
     public let _5xsmall: CGFloat
@@ -136,6 +138,7 @@ public struct DSSize {
     public let _3xlarge: CGFloat
     public let _2xsmall: CGFloat
     public let _2xlarge: CGFloat
+    
 
     public init(
         xsmall: CGFloat,
@@ -144,7 +147,9 @@ public struct DSSize {
         medium: CGFloat,
         large: CGFloat,
         _8xsmall: CGFloat,
+        _8xlarge: CGFloat,
         _7xsmall: CGFloat,
+        _7xlarge: CGFloat,
         _6xsmall: CGFloat,
         _6xlarge: CGFloat,
         _5xsmall: CGFloat,
@@ -162,7 +167,9 @@ public struct DSSize {
         self.medium = medium
         self.large = large
         self._8xsmall = _8xsmall
+        self._8xlarge = _8xlarge
         self._7xsmall = _7xsmall
+        self._7xlarge = _7xlarge
         self._6xsmall = _6xsmall
         self._6xlarge = _6xlarge
         self._5xsmall = _5xsmall
@@ -176,35 +183,42 @@ public struct DSSize {
     }
 }
 
-public struct DSPadding {
-    public let xxsmall: CGFloat
-    public let xxlarge: CGFloat
+public struct DSSpace {
     public let xsmall: CGFloat
     public let xlarge: CGFloat
     public let small: CGFloat
     public let medium: CGFloat
     public let large: CGFloat
+    public let _3xsmall: CGFloat
+    public let _3xlarge: CGFloat
+    public let _2xsmall: CGFloat
+    public let _2xlarge: CGFloat
+    
 
     public init(
-        xxsmall: CGFloat,
-        xxlarge: CGFloat,
         xsmall: CGFloat,
         xlarge: CGFloat,
         small: CGFloat,
         medium: CGFloat,
-        large: CGFloat
+        large: CGFloat,
+        _3xsmall: CGFloat,
+        _3xlarge: CGFloat,
+        _2xsmall: CGFloat,
+        _2xlarge: CGFloat
     ) {
-        self.xxsmall = xxsmall
-        self.xxlarge = xxlarge
         self.xsmall = xsmall
         self.xlarge = xlarge
         self.small = small
         self.medium = medium
         self.large = large
+        self._3xsmall = _3xsmall
+        self._3xlarge = _3xlarge
+        self._2xsmall = _2xsmall
+        self._2xlarge = _2xlarge
     }
 }
 
-public struct DSBorderradius {
+public struct DSRadii {
     public let xsmall: CGFloat
     public let xlarge: CGFloat
     public let small: CGFloat
@@ -213,7 +227,10 @@ public struct DSBorderradius {
     public let large: CGFloat
     public let full: CGFloat
     public let _3xsmall: CGFloat
+    public let _3xlarge: CGFloat
     public let _2xsmall: CGFloat
+    public let _2xlarge: CGFloat
+    
 
     public init(
         xsmall: CGFloat,
@@ -224,7 +241,9 @@ public struct DSBorderradius {
         large: CGFloat,
         full: CGFloat,
         _3xsmall: CGFloat,
-        _2xsmall: CGFloat
+        _3xlarge: CGFloat,
+        _2xsmall: CGFloat,
+        _2xlarge: CGFloat
     ) {
         self.xsmall = xsmall
         self.xlarge = xlarge
@@ -234,7 +253,9 @@ public struct DSBorderradius {
         self.large = large
         self.full = full
         self._3xsmall = _3xsmall
+        self._3xlarge = _3xlarge
         self._2xsmall = _2xsmall
+        self._2xlarge = _2xlarge
     }
 }
 
@@ -242,6 +263,7 @@ public struct DSBorderwidth {
     public let small: CGFloat
     public let medium: CGFloat
     public let large: CGFloat
+    
 
     public init(
         small: CGFloat,
@@ -257,6 +279,7 @@ public struct DSBorderwidth {
 public struct DSAbsolute {
     public let light: SwiftUI.Color
     public let dark: SwiftUI.Color
+    
 
     public init(
         light: SwiftUI.Color,
@@ -276,6 +299,7 @@ public struct DSPrimary {
     public let d3: SwiftUI.Color
     public let d2: SwiftUI.Color
     public let d1: SwiftUI.Color
+    
 
     public init(
         l4: SwiftUI.Color,
@@ -307,6 +331,7 @@ public struct DSSuccess {
     public let d3: SwiftUI.Color
     public let d2: SwiftUI.Color
     public let d1: SwiftUI.Color
+    
 
     public init(
         l4: SwiftUI.Color,
@@ -338,6 +363,7 @@ public struct DSWarning {
     public let d3: SwiftUI.Color
     public let d2: SwiftUI.Color
     public let d1: SwiftUI.Color
+    
 
     public init(
         l4: SwiftUI.Color,
@@ -369,6 +395,7 @@ public struct DSInfo {
     public let d3: SwiftUI.Color
     public let d2: SwiftUI.Color
     public let d1: SwiftUI.Color
+    
 
     public init(
         l4: SwiftUI.Color,
@@ -400,6 +427,7 @@ public struct DSNeutral {
     public let d3: SwiftUI.Color
     public let d2: SwiftUI.Color
     public let d1: SwiftUI.Color
+    
 
     public init(
         l4: SwiftUI.Color,
@@ -431,6 +459,7 @@ public struct DSDanger {
     public let d3: SwiftUI.Color
     public let d2: SwiftUI.Color
     public let d1: SwiftUI.Color
+    
 
     public init(
         l4: SwiftUI.Color,
@@ -461,6 +490,7 @@ public struct DSColor {
     public let info: DSInfo
     public let danger: DSDanger
     public let absolute: DSAbsolute
+    
 
     public init(
         warning: DSWarning,
