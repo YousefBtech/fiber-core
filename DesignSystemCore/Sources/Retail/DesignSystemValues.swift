@@ -174,14 +174,14 @@ public let designSystem = DesignSystem(
             d1: SwiftUI.Color("infoD1")
         ),
         danger: DSDanger(
-            l4: SwiftUI.Color("dangerL4"),
-            l3: SwiftUI.Color("dangerL3"),
-            l2: SwiftUI.Color("dangerL2"),
-            l1: SwiftUI.Color("dangerL1"),
-            l0: SwiftUI.Color("dangerL0"),
-            d3: SwiftUI.Color("dangerD3"),
-            d2: SwiftUI.Color("dangerD2"),
-            d1: SwiftUI.Color("dangerD1")
+            l4: SwiftUI.Color(.dangerL4),
+            l3: SwiftUI.Color(.dangerL3),
+            l2: SwiftUI.Color(.dangerL2),
+            l1: SwiftUI.Color(.dangerL1),
+            l0: SwiftUI.Color(.dangerL0),
+            d3: SwiftUI.Color(.dangerD3),
+            d2: SwiftUI.Color(.dangerD2),
+            d1: SwiftUI.Color(.dangerD1)
         ),
         absolute: DSAbsolute(
             light: SwiftUI.Color("absoluteLight"),
