@@ -23,22 +23,28 @@ jobs:
           swift build
           swift test
 
-      - name: Get the latest tag
-        id: get_tag
-        run: echo ::set-output name=tag::$(git describe --tags --abbrev=0)
+      - name: Get the latest commit hash
+        id: get_commit_hash
+        run: echo ::set-output name=commit_hash::$(git rev-parse --short HEAD)
+
+      - name: Create Git tag
+        id: create_tag
+        run: |
+          git tag -a v${{ steps.get_commit_hash.outputs.commit_hash }} -m "Version ${{ steps.get_commit_hash.outputs.commit_hash }}"
+          git push origin v${{ steps.get_commit_hash.outputs.commit_hash }}
 
       - name: Create release
         id: create_release
         uses: softprops/action-gh-release@v1
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ steps.get_tag.outputs.tag }}
-          release_name: Release ${{ steps.get_tag.outputs.tag }}
+          tag_name: ${{ steps.get_commit_hash.outputs.commit_hash }}
+          release_name: Release ${{ steps.get_commit_hash.outputs.commit_hash }}
           body: |
-            Release notes for version ${{ steps.get_tag.outputs.tag }}
+            Release notes for version ${{ steps.get_commit_hash.outputs.commit_hash }}
           draft: false
           prerelease: false
 
       - name: Get release version
-        run: echo "The new release version is ${{ steps.get_tag.outputs.tag }}"
+        run: echo "The new release version is ${{ steps.get_commit_hash.outputs.commit_hash }}"
