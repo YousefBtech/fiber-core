@@ -6,7 +6,7 @@ public let designSystem = DesignSystem(
         utility: DSUtility(
             label: Typography(
                 lineHeight: 1.4,
-                fontWeight: 600,
+                fontWeight: 800,
                 fontSize: 12.8,
                 fontFamily: "Noto Sans"
             ),
